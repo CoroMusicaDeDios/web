@@ -1,0 +1,543 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+/*--------------------------------- COLOR DE ESQUEMAS ---------------------------------------------------*/
+/*ESQUEMA 1*/
+.overlay1{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #D2293D;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay1::before,
+.overlay1::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #D2293D;
+}
+.overlay1::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+
+/*ESQUEMA 2*/
+.overlay2{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #50A095;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay2::before,
+.overlay2::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #50A095;
+}
+.overlay2::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 3*/
+.overlay3{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #DA99CF;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay3::before,
+.overlay3::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #DA99CF;
+}
+.overlay3::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 4*/
+.overlay4{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #706ACB;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay4::before,
+.overlay4::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #706ACB;
+}
+.overlay4::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 5*/
+.overlay5{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #555461;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay5::before,
+.overlay5::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #555461;
+}
+.overlay5::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 6*/
+.overlay6{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #CB5F28;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay6::before,
+.overlay6::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #CB5F28;
+}
+.overlay6::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 7*/
+.overlay7{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #147084;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay7::before,
+.overlay7::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #147084;
+}
+.overlay7::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+/*ESQUEMA 8*/
+.overlay8{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #337C5C;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay8::before,
+.overlay8:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #337C5C;
+}
+.overlay8::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+
+/*--------------------------------- IMAGNES ---------------------------------------------------*/
+/*-----------------------IMG 1-----------------------*/
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #85343D;
+}
+/*-----------------------IMG 2-------------------------*/
+.card-image2{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image2 .card-img2{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #346861;
+}
+/*-----------------------IMG 3-------------------------*/
+.card-image3{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image3 .card-img3{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #813173;
+}
+/*-----------------------IMG 4-------------------------*/
+.card-image4{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image4 .card-img4{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #44407F;
+}
+/*-----------------------IMG 5-------------------------*/
+.card-image5{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image5 .card-img5{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #25252A;
+}
+/*-----------------------IMG 6-------------------------*/
+.card-image6{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image6 .card-img6{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #9F461A;
+}
+/*-----------------------IMG 7-------------------------*/
+.card-image7{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image7 .card-img7{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #115564;
+}
+/*-----------------------IMG 8-------------------------*/
+.card-image8{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image8 .card-img8{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #337C5C;
+}
+
+/**/
+.name{
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+.description{
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+}
+
+/*--------------------------------- BOTONES ---------------------------------------------------*/
+/*BOTON 1*/
+.button{
+  border: none;
+  font-size: 16px;
+  justify-content:center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #D2293D;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #CB4353 ;
+}
+/*BOTON 2*/
+.button2{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #346861;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button2:hover{
+  background: #CB4353;
+}
+/*BOTON 3*/
+.button3{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #DA99CF;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #CB4353 ;
+}
+/*BOTON 4*/
+.button4{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #706ACB ;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #CB4353;
+}
+/*BOTON 5*/
+.button5{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #555461;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #CB4353 ;
+}
+/*BOTON 6*/
+.button6{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #CB5F28;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.butto6:hover{
+  background: #CB4353 ;
+}
+/*BOTON 7*/
+.button7{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #147084;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button7:hover{
+  background: #CB4353 ;
+}
+/*BOTON 8*/
+.button8{
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  width: 250px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #337C5C;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #CB4353 ;
+}
+
+
+/*--------------------------------- OTROS ---------------------------------------------------*/
+
+.swiper-navBtn{
+  color: #6E93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070F4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+
+.swiper-pagination-bullet{
+  background-color: #6E93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #4070F4;
+}
+
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+  .button{
+    display: flex;
+  }
+}
