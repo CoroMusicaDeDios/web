@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="../css/estilos.css">
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+    <style>
+        /* Agregar estilos para el contenedor de copos de nieve */
+        #snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Para que los copos de nieve no interfieran con la interacción del usuario */
+            z-index: 9999; /* Asegurar que esté en la parte superior de todo */
+        }
+    </style>
 </head>
 <body>
 
@@ -56,7 +67,8 @@
 
         </div>
     </div>
-
+    <!-- Agregar el contenedor para los copos de nieve -->
+    <div id="snow-container"></div>
     <div class="container-content">
 
         
