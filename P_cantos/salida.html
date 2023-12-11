@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORO MUSICA DE DIOS</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <style>
+        /* Agrega estilos CSS para el campo de búsqueda y el título */
+        .search-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px; /* Espacio entre el título y el campo de búsqueda */
+        }
+
+        .search-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #0b0e0f;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #14171a;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #13181b;
+            cursor: pointer;
+        }
+
+        .results-container {
+            position: absolute;
+            width: 250px;
+            margin-top: 10px; /* Ajusta la distancia entre el buscador y los resultados */
+        }
+
+        .dropdown-options {
+            max-height: 175px; /* Establece la altura máxima para el menú desplegable */
+            overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
+            display: none;
+            /*border: 2px solid #1d4d6d;*/
+            border-radius: 5px 5px 5px 5px;
+            background-color: #fff;
+            /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .dropdown-options a {
+            border: 2px solid #030405;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            color: #14181b;
+            text-decoration: none;
+        }
+
+        .dropdown-options a:hover {
+            background-color: #0f1214;
+            color: #fff;
+        }
+        .señor{
+
+        width: 100%;
+        height: 600px;
+        position: relative;
+        margin-top: 80px;
+        background-image: url(../img_portada/salida.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Header - menu-->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Coro Musica<b> De Dios</b></h1>
+            </div>
+
+            <div class="menu" id="show-menu">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li><a href="../P_secun/esquemas.html">ESQUEMAS</a></li>
+                        <li><a href="../P_secun/agenda.html">AGENDA</a></li>
+                        <li><a href="../P_secun/carpeta.html">CANTOS LETRA</a></li>
+                        <li><a href="../A_cantos/audios.html">CANTOS AUDIO</a></li>
+                        <li><a href="../P_secun/misal.html">MISAL</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="icon-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!--Portada ---->
+    <div class="container-all" id="move-content">
+        <div class="señor">
+            <div class="container-info-cover"></div>
+        </div>
+        <!------------------------------------------------------------->
+        <div class="container-content">
+            <article>
+                <br>
+                <br>
+                <center>
+                    <!-- Nuevo título para el buscador -->
+                    <div class="search-title">BUSCAR</div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="search-input" placeholder="NOMBRE DEL CANTO" style="width:250px;" oninput="filterCategories()">
+                        <i class="fas fa-search search-icon" onclick="toggleDropdown()"></i>
+                        <div class="results-container" id="results-container">
+                            <br>
+                            <br>
+                            <div class="dropdown-options" id="dropdown-options">
+                                <a href="https://drive.google.com/file/d/1gKwxUgHXDewhaW09JUHSyeOEY26VTp8H/view?usp=sharing">A TI VIRGENCITA</a>
+                                <a href="https://drive.google.com/file/d/1OlBgdISOJoD7xSoRIDDfsP970RuETGY8/view?usp=sharing">ACEPTA SU REGALO</a>
+                                <a href="https://drive.google.com/file/d/1dcbVH5KHqaxr7H7_edkoZaFyVcjMkT3K/view?usp=sharing">ALMA DE CRISTO</a>
+                                <a href="https://drive.google.com/file/d/16Vvp4L3zM084tTCXoQUdSXG98OwIacU8/view?usp=sharing">AMEMONOS DE CORAOZON</a>
+                                <a href="https://drive.google.com/file/d/1je4-6W8n3BS7VWF7Mnb6fG1pR0dpnUIY/view?usp=sharing">AMOR SOLO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1QwrUnm_7FdN1H2hmA5a_um-BJSjls3gC/view?usp=sharing">AVE DE FATIMA</a>
+                                <a href="https://drive.google.com/file/d/1Hr-ulhZkqn3GTm8yCFbmh3r2EZ8WvpGV/view?usp=sharing">AY DEL CHIQUIRRITIN</a>
+                                <a href="https://drive.google.com/file/d/1CLgXNpHfhPWn-ct6ubMjVLd1-17n9--M/view?usp=sharing">BUENOS DIAS PALOMA</a>
+                                <a href="https://drive.google.com/file/d/15SJY63jEUSPvkgY2khHpG2kZ_i8QbXoW/view?usp=sharing">CERCA ESTA</a>
+                                <a href="https://drive.google.com/file/d/1il2I42CJGFj8N3Pc4-2jgJdeDnHVlZbB/view?usp=sharing">CONTIGO MARIA</a>
+                                <a href="https://drive.google.com/file/d/1xfHBrE0xlOhoY1NqrzawjioJl1mtKupa/view?usp=sharing">CUANDO ERA PEQUEÑO</a>
+                                <a href="https://drive.google.com/file/d/1zcpQxxTnRmVq4fCpBpFYf1YazftvbIj5/view?usp=sharing">DE DOS EN DOS</a>
+                                <a href="https://drive.google.com/file/d/1CocC3LvJcE3_ryEyGENsOpW-miJEFn28/view?usp=sharing">DEJA TU PATRIA</a>
+                                <a href="https://drive.google.com/file/d/11c8pAqhPB4lXzbduHpPKdh-r3s2wqFyB/view?usp=sharing">DEMOS GRACIAS</a>
+                                <a href="https://drive.google.com/file/d/1pcudsWm0SRntIZFQwz15Sis08mEpgLOC/view?usp=sharing">DIOS TE SALVE PALOMITA</a>
+                                <a href="https://drive.google.com/file/d/19UL27kcAUTCLpZ3NPzTJvtwUWblvT1DN/view?usp=sharing">DULCE MADRE</a>
+                                <a href="https://drive.google.com/file/d/1luHOijsRD5KsHy8J_mvuCS5ZRp618Bvp/view?usp=sharing">EN JESUS</a>
+                                <a href="https://drive.google.com/file/d/1laKYY88QbzBgfauS9k3-ckMSAD81YlmU/view?usp=sharing">EN TU DIA</a>
+                                <a href="https://drive.google.com/file/d/1ElXD89Ry71xZdlKTZZmgV_mgY-0IQGUe/view?usp=sharing">ESCONDETE EN LAS MANOS</a>
+                                <a href="https://drive.google.com/file/d/1HQn_h920q3MLZzv7F9mlgUBQ_xT5KKP-/view?usp=sharing">ESTOY PENSANDO EN DIOS</a>
+                                <a href="https://drive.google.com/file/d/1t_Dj6mZV5puJy8Na2nK1Y7TUVP6Qcgi8/view?usp=sharing">GRACIAS TE DOY SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1kgwc-iJri7XPpIJuOwD2Qd5iKtx9cU25/view?usp=sharing">HAZME UN INSTRUMENTO</a>
+                                <a href="https://drive.google.com/file/d/1upeRe2wNeYR6ld9aIxBx5csz8WxHbuiJ/view?usp=sharing">HIMNO A SAN JUDAS TADEO</a>
+                                <a href="https://drive.google.com/file/d/1vbtlNBlNJugacqTLeEfZcAmUd2xZeK1U/view?usp=sharing">HIMNO A SANTIAGO APOSTOL</a>
+                                <a href="https://drive.google.com/file/d/1icremVjCZ1IXKIRiwfrRoakycODoz7N_/view?usp=sharing">HOSSANA EH</a>
+                                <a href="https://drive.google.com/file/d/185E4qrMEwHtcQvsGfiotrHe_7NWspmI9/view?usp=sharing">HOY SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1TirzJPM33xzPvBEJcSVkh54w2-IGep8F/view?usp=sharing">JESUCRISTO ME DEJO</a>
+                                <a href="https://drive.google.com/file/d/1-6jogsme9X6hxOuxZaUSuOdWlR7yxPX8/view?usp=sharing">JUNTO A TI MARIA</a>
+                                <a href="https://drive.google.com/file/d/1ZUj3XYL15oSxiRvkM4YfM3wNFKFYFcIe/view?usp=sharing">LA FAMILIA</a>
+                                <a href="https://drive.google.com/file/d/1V7wVbjuLOvhlT_C1SgzBliMYlqJhl8H5/view?usp=sharing">LA GUADALUPANA</a>
+                                <a href="https://drive.google.com/file/d/1DIHF4C5tIZjSkB0Q-5tn5WhkpPme64b3/view?usp=sharing">LA INMACULADA</a>
+                                <a href="https://drive.google.com/file/d/1oy7wsy8W3MmlKO3hy32Acev2vBVFj_Be/view?usp=sharing">LAS CUADRO APARICIONES</a>
+                                <a href="https://drive.google.com/file/d/1-8kC1wTJBzR-wR_X3tYsY1vJnYJCzMhY/view?usp=sharing">LAS MAÑANITAS</a>
+                                <a href="https://drive.google.com/file/d/1kqIvWfC0rEuHik3kx8E8GEOp7QNtRL0V/view?usp=sharing">LIMPIAME SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1hpveS8YWWiMIQWLYtP3KNbNS1ewu-ZU5/view?usp=sharing">MADRE DEL SILENCIO</a>
+                                <a href="https://drive.google.com/file/d/1rXSGhgdcy_rE0gCV4HVvGv8Rc8laISej/view?usp=sharing">MADRE ERES BELLA</a>
+                                <a href="https://drive.google.com/file/d/1_sZEp-GiXAgcC1xCYMdPmGDyYdDI9UXj/view?usp=sharing">MADRE OYEME</a>
+                                <a href="https://drive.google.com/file/d/1KAaBUYhxrbvtuXFq4Dmd8xZfeAkC5lX0/view?usp=sharing">MARIA DE NAZARET</a>
+                                <a href="https://drive.google.com/file/d/1OjhWWo_X65dCKgTL6kND70YExoryzoEa/view?usp=sharing">MI VIRGEN RANCHERA</a>
+                                <a href="https://drive.google.com/file/d/1tEhJtzVgVzPc9vrE3oGxdrD3hLbcRYWK/view?usp=sharing">MISIONERO</a>
+                                <a href="https://drive.google.com/file/d/1H7dfxwI_cvSb2W6d1JIqs4lylQNg6UTZ/view?usp=sharing">NIÑA</a>
+                                <a href="https://drive.google.com/file/d/11AaG5eE9tCYwwvdPTHuLZ7xCCCoZPgAX/view?usp=sharing">NIÑITO HERMANITO</a>
+                                <a href="https://drive.google.com/file/d/1cct6yVHI7vHBHMRco2VZvzZ2EFhA4_4C/view?usp=sharing">OH MARIA</a>
+                                <a href="https://drive.google.com/file/d/1mBC30IORqXBaaSd1nKt8mKIW2_BzHm-_/view?usp=sharing">PRONUNCIO MI NOMBRE</a>
+                                <a href="https://drive.google.com/file/d/1k9EjV4tOuGGH78UurA0uwRSXk4NyjMfT/view?usp=sharing">QUIEN PIERDE SU VIDA</a>
+                                <a href="https://drive.google.com/file/d/1lUxdRyBGMh7msa9W8W0KtecydG1Nw6fF/view?usp=sharing">QUIEN SERA LA MUJER</a>
+                                <a href="https://drive.google.com/file/d/1G4RIY2QYaJxls55isAthNiV1v89nJW5J/view?usp=sharing">SANTA MARIA DEL CAMINO</a>
+                                <a href="https://drive.google.com/file/d/1wa3ciwT_PUQrD8tYRp5D2HU9ynmt5fTU/view?usp=sharing">TAN BELLO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1v5o4lKQpeWW51h0deu1megfMrArSvhPC/view?usp=sharing">TE CONSAGRO</a>
+                                <a href="https://drive.google.com/file/d/1QszK-vfQN2ALPTe-Cb15eiRZWCrqdHnV/view?usp=sharing">TE DOY GRACIAS</a>
+                                <a href="https://drive.google.com/file/d/1t9lTf_3-EQCxtED_Q4Y3lfdCBBzs5WL_/view?usp=sharing">TESTIGOS</a>
+                                <a href="https://drive.google.com/file/d/1VnqOLH2W0vEKsmexCobAohEAp6DCutWB/view?usp=sharing">TIENES QUE SER UN NIÑO</a>
+                                <a href="https://drive.google.com/file/d/17iuBxU1etUJXJ-yILM2HKQ417SfKSEBz/view?usp=sharing">UN ANHELO FERVIENTE</a>
+                                <a href="https://drive.google.com/file/d/10f6rycmbvPevcnqQQGMFVI7_l2RoRj_4/view?usp=sharing">UN CIERTO GALILEO</a>
+                                <a href="https://drive.google.com/file/d/12PMPUM9gWVsOM8nI4jpnadRQNRybC-Iv/view?usp=sharing">UN DIA CAMINABA</a>
+                                <a href="https://drive.google.com/file/d/1ZhTJARQ2wV3EddEht1LuqWkHZFwzPz23/view?usp=sharing">VEN AMADA MIA</a>
+                                <a href="https://drive.google.com/file/d/1_mGJ8XwH3r3D_bxD7YeQQzn8jKF4ON8p/view?usp=sharing">VEN ESPIRITU DIVINO</a>
+                                <a href="https://drive.google.com/file/d/1lNvbAliGfqU9y6DQkIkP1Wvfdc-lQDsy/view?usp=sharing">VIVA CRISTO REY</a>
+                                <a href="https://drive.google.com/file/d/1Kod9nG4sa2XzDwc1_MKYZzkk3HIBAMsY/view?usp=sharing">VIVE JESUS EL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1WU8ojmZIxH1iuDuWrduCHbEjjNc4be3K/view?usp=sharing">YO NO ERA PROFETA</a>
+                                <a href="https://drive.google.com/file/d/1HZ7Sut0r3AnjAivqCuBdguqlKTa0T6c9/view?usp=sharing">YO NO SOY NADA</a>
+                                <a href="https://drive.google.com/file/d/1nssa8LNzbw7hLl5i9M7MvmYpObiyok9v/view?usp=sharing">YO TENGO UNA MADRE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </center>
+            </article>
+        </div>
+        <!------------------------------------------------------------->
+    </div>
+
+    <div class="container-footer">	
+        <footer>
+            <div class="logo-footer">
+                <img src="../img/logo.jpg" class="logoP" alt="">
+            </div>
+
+            <div class="redes-footer">
+                <a href="https://www.facebook.com/profile.php?id=100073750513143&sk=about"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2022 CoroMusicaDeDios - Creador-Josue Chavez</h4>
+
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+            function toggleDropdown() {
+            var dropdownOptions = document.getElementById('dropdown-options');
+            var searchInput = document.getElementById('search-input');
+    
+            if (searchInput.value.trim() !== '') {
+                dropdownOptions.style.display = dropdownOptions.style.display === 'none' ? 'block' : 'none';
+            } else {
+                dropdownOptions.style.display = 'none';
+            }
+        }
+    
+        function filterCategories() {
+            var input = document.getElementById('search-input');
+            var filter = input.value.trim().toUpperCase();
+            var options = document.getElementById('dropdown-options').getElementsByTagName('a');
+            var resultsContainer = document.getElementById('results-container');
+    
+            // Mostrar u ocultar el contenedor de resultados solo si hay algo escrito
+            resultsContainer.style.display = filter !== '' ? 'block' : 'none';
+    
+            // Mostrar u ocultar opciones de búsqueda según las coincidencias
+            for (var i = 0; i < options.length; i++) {
+                var textValue = options[i].textContent || options[i].innerText;
+                options[i].style.display = filter !== '' && textValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>

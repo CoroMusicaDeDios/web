@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORO MUSICA DE DIOS</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <style>
+        /* Agrega estilos CSS para el campo de búsqueda y el título */
+        .search-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px; /* Espacio entre el título y el campo de búsqueda */
+        }
+
+        .search-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #0b0e0f;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #14171a;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #13181b;
+            cursor: pointer;
+        }
+
+        .results-container {
+            position: absolute;
+            width: 250px;
+            margin-top: 10px; /* Ajusta la distancia entre el buscador y los resultados */
+        }
+
+        .dropdown-options {
+            max-height: 175px; /* Establece la altura máxima para el menú desplegable */
+            overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
+            display: none;
+            /*border: 2px solid #1d4d6d;*/
+            border-radius: 5px 5px 5px 5px;
+            background-color: #fff;
+            /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .dropdown-options a {
+            border: 2px solid #030405;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            color: #14181b;
+            text-decoration: none;
+        }
+
+        .dropdown-options a:hover {
+            background-color: #0f1214;
+            color: #fff;
+        }
+        .señor{
+
+        width: 100%;
+        height: 600px;
+        position: relative;
+        margin-top: 80px;
+        background-image: url(../img_portada/comunion.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Header - menu-->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Coro Musica<b> De Dios</b></h1>
+            </div>
+
+            <div class="menu" id="show-menu">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li><a href="../P_secun/esquemas.html">ESQUEMAS</a></li>
+                        <li><a href="../P_secun/agenda.html">AGENDA</a></li>
+                        <li><a href="../P_secun/carpeta.html">CANTOS LETRA</a></li>
+                        <li><a href="../A_cantos/audios.html">CANTOS AUDIO</a></li>
+                        <li><a href="../P_secun/misal.html">MISAL</a></li>>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="icon-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!--Portada ---->
+    <div class="container-all" id="move-content">
+        <div class="señor">
+            <div class="container-info-cover"></div>
+        </div>
+        <!------------------------------------------------------------->
+        <div class="container-content">
+            <article>
+                <br>
+                <br>
+                <center>
+                    <!-- Nuevo título para el buscador -->
+                    <div class="search-title">BUSCAR</div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="search-input" placeholder="NOMBRE DEL CANTO" style="width:250px;" oninput="filterCategories()">
+                        <i class="fas fa-search search-icon" onclick="toggleDropdown()"></i>
+                        <div class="results-container" id="results-container">
+                            <br>
+                            <br>
+                            <div class="dropdown-options" id="dropdown-options">
+                                <a href="https://drive.google.com/file/d/1JsA-euh3N4flNAk8PRQtm0SC8VnLUM96/view?usp=sharing">ABRE TU TIENDA AL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1mZahIaKwDC7_1_MTfEDWOgh-VJ7xgkj6/view?usp=sharing">AL CONTEMPLARTE</a>
+                                <a href="https://drive.google.com/file/d/1KO3bOyG4bBDOAj0_zkkbulRoJ9QlVX8S/view?usp=sharing">AMOR DE LOS AMORES</a>
+                                <a href="https://drive.google.com/file/d/1Bkw4tMSmaDiq5QtkGvogVXn08uNRv6GQ/view?usp=sharing">BENDITO, BENDITO</a>
+                                <a href="https://drive.google.com/file/d/1ITZ5rWnt9THAZ96bXI2l8CMTDzCvFauP/view?usp=sharing">BIENAVENTURADOS</a>
+                                <a href="https://drive.google.com/file/d/1qE1-CCuSp8XfkJucCCddOovEhIJQTjSy/view?usp=sharing">BODAS DE CANA</a>
+                                <a href="https://drive.google.com/file/d/1bnO3K3pGNdkG-jCPh7rTJYv95sqsr-nd/view?usp=sharing">BODAS DEL CORDERO</a>
+                                <a href="https://drive.google.com/file/d/1NLcuCuvKJkfkTjPUZu4IRGVSLCs7NRmP/view?usp=sharing">CAMINO VIDA Y VERDAD</a>
+                                <a href="https://drive.google.com/file/d/11-bKbNLdbFVlcZBIV3egPJDyFzHiY_cj/view?usp=sharing">COMIENDO DEL MISMO PAN</a>
+                                <a href="https://drive.google.com/file/d/1RUhEh9jos_Zo7VzRTMl79C09fyaQ9JoS/view?usp=sharing">COMO BUSCA LA CIERVA</a>
+                                <a href="https://drive.google.com/file/d/1Jnp6kT0WcxYsldkttFpdYaZX_cpvs3RF/view?usp=sharing">COMO EL PADRE</a>
+                                <a href="https://drive.google.com/file/d/1PnOmuVDvUqrr5STlWfzqhW5GzMf0UQBj/view?usp=sharing">CRISTO TE NECESITA</a>
+                                <a href="https://drive.google.com/file/d/1OLbU3y0D2yEJ7Jzm8fNPiYQzIY371eIs/view?usp=sharing">CUERPO SANGRE ALMA</a>
+                                <a href="https://drive.google.com/file/d/1bovoE6Nkddm48UE_Wxxn2LaRqRqiaPyS/view?usp=sharing">DIOS ES AMOR</a>
+                                <a href="https://drive.google.com/file/d/1zleP7Bq7z2716yEPo8LdF3tQiCs7h4ue/view?usp=sharing">DIOS ES FIEL</a>
+                                <a href="https://drive.google.com/file/d/1icZKzlqcenctiiZDPuPKSteb0MzXBaQj/view?usp=sharing">DIOS NOS DA SU PAN</a>
+                                <a href="https://drive.google.com/file/d/1Nubv9njLeOSeENPkQ-d_LbknTlVJSZIW/view?usp=sharing">DIVINO MANJAR</a>
+                                <a href="https://drive.google.com/file/d/1hlJ2RtQkgWCMJgpynS6WEm8LbSMa-0uh/view?usp=sharing">EL DIOS UNO Y TRINO</a>
+                                <a href="https://drive.google.com/file/d/1CqrEJCvZ5UKLNK79FANq19twMbrCFoET/view?usp=sharing">EL SEÑOR ES MI PASTOR</a>
+                                <a href="https://drive.google.com/file/d/1KqtUpwGTWnBu9MPrfS1Y9rb22L1Wkc2c/view?usp=sharing">EL VIÑADOR</a>
+                                <a href="https://drive.google.com/file/d/1bcG2qrOMJctMMHbX5aF4-GN-iq6p_zaR/view?usp=sharing">EN LA VIÑA DEL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1ON0LZZh3LksDTyR_9T7Y7ivWg4sO2BrL/view?usp=sharing">ENTRA</a>
+                                <a href="https://drive.google.com/file/d/16VJl-vU0a7jnBgcysQEQaPmNB_Iac18W/view?usp=sharing">ESPIRITU SANTO VEN</a>
+                                <a href="https://drive.google.com/file/d/1XBMDYw5y26tQw8rDpuflD--JoDM5IcyV/view?usp=sharing">ESTAS AQUI</a>
+                                <a href="https://drive.google.com/file/d/1XZeiXnzldzLRGcTLcKUYjdXYtIqBjixL/view?usp=sharing">ESTE ES EL AYUNO</a>
+                                <a href="https://drive.google.com/file/d/1Ny2V7Nt0e_3SSA4dXVpM0CiEjhjj94JM/view?usp=sharing">EUCARISTIA DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1iZJuHo0D79MKDeIYER88grYIGZHjZaY-/view?usp=sharing">EUCARISTIA</a>
+                                <a href="https://drive.google.com/file/d/17Md3N-1erPHvJJGVaKJt7nUEYDuW8EP9/view?usp=sharing">GRACIAS SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1-SGAH25HNuseiHm5_NbZYNibpQKjFgE6/view?usp=sharing">GRANDE MISTERIO DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1Y1q7JMmiIVujx8zwMXPqWlJuhWKCfZEo/view?usp=sharing">HIMNO A SAN ISIDRO</a>
+                                <a href="https://drive.google.com/file/d/1LVeGp4cpixiLdTyzjU2VwEaE-DSzeS2K/view?usp=sharing">HIMNO EUCARISTICO</a>
+                                <a href="https://drive.google.com/file/d/1cegtd3TRDpOqwqvIuvAVkCvdMh8I5Ur3/view?usp=sharing">IN PERSONA CHRISTI</a>
+                                <a href="https://drive.google.com/file/d/1DmNmPM79M4_EJsqjb6eFUv8YCr7WUHT4/view?usp=sharing">JESUS AMIGO</a>
+                                <a href="https://drive.google.com/file/d/1blq6kL-pkRXtmlv3iuThG7dj9HHKccyu/view?usp=sharing">JESUS ESTA VIVO</a>
+                                <a href="https://drive.google.com/file/d/1pcA02CuRZ7OD8CDhyMFXxCRXAOOjhxLn/view?usp=sharing">JESUS PAN DEL CIELO</a>
+                                <a href="https://drive.google.com/file/d/1SUPmllDkkh7QXoXRdX8aGV7_l0paDlNC/view?usp=sharing">LA SANGRE DE CRISTO</a>
+                                <a href="https://drive.google.com/file/d/1zit2O6S5TTMZsisbLOjqfsL4nKLGcTjP/view?usp=sharing">LA TRANSFIGURACION</a>
+                                <a href="https://drive.google.com/file/d/1t9oj6DdNMbbU1PgI_JiW0EPy_oWi7kKW/view?usp=sharing">LOS REYES DE ORIENTE</a>
+                                <a href="https://drive.google.com/file/d/1IoK-0tf8M28M3W_r4fSvUsDLjX-uCmAx/view?usp=sharing">MADRE DEL DIVINO PAN</a>
+                                <a href="https://drive.google.com/file/d/1MgH0aXBbaY6nk_Ym1IH-Qhc7tUjjpcvw/view?usp=sharing">MI JESUS SACRAMENTADO</a>
+                                <a href="https://drive.google.com/file/d/1xXutqeqKxWDhLQIHJg9RTMKE4i2UENBU/view?usp=sharing">MILAGRO DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1WS7sCI4i6c9LaxOsuQ5rsl-aUj6ZId_q/view?usp=sharing">NO PODEMOS CAMINAR</a>
+                                <a href="https://drive.google.com/file/d/1w7z98_jmZ65_f1IBlxwClavsKtYUvYCo/view?usp=sharing">NO SOLO DE PAN</a>
+                                <a href="https://drive.google.com/file/d/1keMg3kcfKnV8U6xKT1Mm6sTJvyDvWzKm/view?usp=sharing">NOCHE DE PAZ</a>
+                                <a href="https://drive.google.com/file/d/1ud5CwLmM4nJYaLVK2PJEsIIQ6_5FQ6GA/view?usp=sharing">OH BUEN JESUS</a>
+                                <a href="https://drive.google.com/file/d/1mV1tlRNJkM9vwKAr3R98kSTywi8wx5F-/view?usp=sharing">OH SEÑOR DELANTE DE TI</a>
+                                <a href="https://drive.google.com/file/d/1eEVv0yLoJlqBWKgqfIC87qb2rm24FbQS/view?usp=sharing">OH VEN EMMANUEL</a>
+                                <a href="https://drive.google.com/file/d/1E-u55y_JXynWDXW5TBfVHFIwtPRfPaqJ/view?usp=sharing">PADRE MIO</a>
+                                <a href="https://drive.google.com/file/d/1jcovf4ACkhBeHm8ZvPqlvpBKt4Aae7fj/view?usp=sharing">PAN TRASFORMADO</a>
+                                <a href="https://drive.google.com/file/d/1NYqmvljlG2iPkcM3Lp5TbMxmy9XSFLLd/view?usp=sharing">PERDONANOS</a>
+                                <a href="https://drive.google.com/file/d/1_jBr9NIRJROl9RuXBMe19ZfCcKODcB0x/view?usp=sharing">POR ADAN</a>
+                                <a href="https://drive.google.com/file/d/1y8gp2WHVTI7PiFKvD0FhKKm9Cv2_ZbYY/view?usp=sharing">POR LA CALZADA DE EMAUS</a>
+                                <a href="https://drive.google.com/file/d/14PpAvx9GN3MbYDTcA5JyRvEs0MYz0PnM/view?usp=sharing">QUE BUENO ES EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1txWaZML2qzcJ9kErmTMnwxdaN8H6K8uM/view?usp=sharing">SACERDOTE POR SIEMPRE</a>
+                                <a href="https://drive.google.com/file/d/1Js2u5V2dHfm44pcTUglgEQLsCI-EHjVA/view?usp=sharing">SACRAMENTO DE LA COMUNION</a>
+                                <a href="https://drive.google.com/file/d/1ebpbHSdRJBQEx6LAcG6Hy-GkCT8vqELs/view?usp=sharing">SEÑOR PERMITE</a>
+                                <a href="https://drive.google.com/file/d/1jcb4MZS3fOWzD4wPwO1lzi1e2bXv5Osr/view?usp=sharing">SEÑOR TU ERES EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1Yb2BYma5-JcF2SgkV68jt2YgdcYQAh73/view?usp=sharing">SI ME LEVANTARE</a>
+                                <a href="https://drive.google.com/file/d/1LFTNNSmJuaONoZZ1R4QlDneQlvoBluHl/view?usp=sharing">SI YO NO TENGO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1XP1SvLSEkeHwrMM2BG_aijP1GEK5_71B/view?usp=sharing">SYMBOLUM</a>
+                                <a href="https://drive.google.com/file/d/13BZDyPUeXoURQ2bq1ioJptIat-MIJ6aa/view?usp=sharing">TAN CERCA DE TI</a>
+                                <a href="https://drive.google.com/file/d/1w_16mU4-phrFW3DQYCsn_Jg3y66183_H/view?usp=sharing">TENGO SED DE TI</a>
+                                <a href="https://drive.google.com/file/d/1FCKlsE_8Hq5OxTYN-NzaHojnm0bQgTzM/view?usp=sharing">TOMAD Y COMED</a>
+                                <a href="https://drive.google.com/file/d/1wrjmDXParRamWmExZB44U2bnYcsZy4up/view?usp=sharing">TU HAS VENIDO</a>
+                                <a href="https://drive.google.com/file/d/1Sxwt2p2dPFMONzr29WYNePH9gpm3cRO1/view?usp=sharing">TU NOS INVITAS</a>
+                                <a href="https://drive.google.com/file/d/1iwrciP86OyCwJHnl6EoIwhpa0tr7DoVO/view?usp=sharing">TU REINARAS</a>
+                                <a href="https://drive.google.com/file/d/1QFmj1mTFgg-CJSTqiHnD6FEtRo0u4HXT/view?usp=sharing">TU ROSTRO EN EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1XpOIEV5cODt-e_BJYZ08uh4EfZwkDeQo/view?usp=sharing">UN ROSTRO</a>
+                                <a href="https://drive.google.com/file/d/19k4tjGIKWheIhUq3lbrOC67BexFcQKdU/view?usp=sharing">UNA ESPIGA</a>
+                                <a href="https://drive.google.com/file/d/1PpQLoU3p1MkS9A9HstleRWJqQd-1T1NO/view?usp=sharing">UNIDOS EN TI</a>
+                                <a href="https://drive.google.com/file/d/1sxZQo1rqd9L33sm9k3d5-Mv-tPCrz6o1/view?usp=sharing">VEN A MI DULCE PAN</a>
+                                <a href="https://drive.google.com/file/d/1UNlW24tDmriuiBcfuaK4CrUdNYG0sopO/view?usp=sharing">VEN A MI</a>
+                                <a href="https://drive.google.com/file/d/1tcvLuNRwWLCgK18bIr1md5dT-VEzzf0b/view?usp=sharing">VENID GUSTAD</a>
+                                <a href="https://drive.google.com/file/d/1Uf0ynxlt8V7aiFEWZoVDAD8qlE3zg1Ir/view?usp=sharing">VERBUM PANIS</a>
+                                <a href="https://drive.google.com/file/d/1WCq9iM01LUAqgtRRvTFRUyNbFQNl9sbG/view?usp=sharing">VETE Y NO PEQUES MAS</a>
+                                <a href="https://drive.google.com/file/d/1Phqu_Ni8DznTHn7KfS_n6zx_9jvw4Ws4/view?usp=sharing">YA NO ERES PAN Y VINO</a>
+                                <a href="https://drive.google.com/file/d/1NkpHBlXX47X55np4eEpfTvMP5XRy3YVo/view?usp=sharing">YO SOY EL PAN DE VIDA</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </center>
+            </article>
+        </div>
+        <!------------------------------------------------------------->
+    </div>
+
+    <div class="container-footer">	
+        <footer>
+            <div class="logo-footer">
+                <img src="../img/logo.jpg" class="logoP" alt="">
+            </div>
+
+            <div class="redes-footer">
+                <a href="https://www.facebook.com/profile.php?id=100073750513143&sk=about"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2022 CoroMusicaDeDios - Creador-Josue Chavez</h4>
+
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+            function toggleDropdown() {
+            var dropdownOptions = document.getElementById('dropdown-options');
+            var searchInput = document.getElementById('search-input');
+    
+            if (searchInput.value.trim() !== '') {
+                dropdownOptions.style.display = dropdownOptions.style.display === 'none' ? 'block' : 'none';
+            } else {
+                dropdownOptions.style.display = 'none';
+            }
+        }
+    
+        function filterCategories() {
+            var input = document.getElementById('search-input');
+            var filter = input.value.trim().toUpperCase();
+            var options = document.getElementById('dropdown-options').getElementsByTagName('a');
+            var resultsContainer = document.getElementById('results-container');
+    
+            // Mostrar u ocultar el contenedor de resultados solo si hay algo escrito
+            resultsContainer.style.display = filter !== '' ? 'block' : 'none';
+    
+            // Mostrar u ocultar opciones de búsqueda según las coincidencias
+            for (var i = 0; i < options.length; i++) {
+                var textValue = options[i].textContent || options[i].innerText;
+                options[i].style.display = filter !== '' && textValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
