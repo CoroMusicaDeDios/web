@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORO MUSICA DE DIOS</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="css/styleS.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <style>
+        /* Agrega estilos CSS para el campo de búsqueda y el título */
+        .search-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px; /* Espacio entre el título y el campo de búsqueda */
+        }
+
+        .search-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #0b0e0f;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #14171a;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #13181b;
+            cursor: pointer;
+        }
+
+        .results-container {
+            position: absolute;
+            width: 250px;
+            margin-top: 10px; /* Ajusta la distancia entre el buscador y los resultados */
+        }
+
+        .dropdown-options {
+            max-height: 175px; /* Establece la altura máxima para el menú desplegable */
+            overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
+            display: none;
+            /*border: 2px solid #1d4d6d;*/
+            border-radius: 5px 5px 5px 5px;
+            background-color: #fff;
+            /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .dropdown-options a {
+            border: 2px solid #030405;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            color: #14181b;
+            text-decoration: none;
+        }
+
+        .dropdown-options a:hover {
+            background-color: #0f1214;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Header - menu-->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Coro Musica<b> De Dios</b></h1>
+            </div>
+
+            <div class="menu" id="show-menu">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li><a href="esquemas.html">ESQUEMAS</a></li>
+                        <li><a href="agenda.html">AGENDA</a></li>
+                        <li><a href="carpeta.html">CANTOS LETRA</a></li>
+                        <li><a href="../A_cantos/audios.html">CANTOS AUDIO</a></li>
+                        <li><a href="misal.html">MISAL</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="icon-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!--Portada ---->
+    <div class="container-all" id="move-content">
+        <div class="fotoCANTOS">
+            <div class="container-info-cover"></div>
+        </div>
+        <!------------------------------------------------------------->
+        <div class="container-content">
+            <article>
+                <br>
+                <br>
+                <center>
+                    <!-- Nuevo título para el buscador -->
+                    <div class="search-title">Busca tu canto</div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="search-input" placeholder="NOMBRE DEL CANTO" style="width:250px;" oninput="filterCategories()">
+                        <i class="fas fa-search search-icon" onclick="toggleDropdown()"></i>
+                        <div class="results-container" id="results-container">
+                            <br>
+                            <br>
+                            <div class="dropdown-options" id="dropdown-options">
+                                <!-- MENU -->
+                                <!--
+                                <a href="../P_cantos/entrada.html">ENTRADA</a>
+                                <a href="https://drive.google.com/file/d/1ofSu8oTIeMPyFS0-8og8CRjumg6m9xQl/view?usp=sharing">CANTO PARA LA CORONA DE ADVIENTO</a>
+                                <a href="../P_cantos/señor.html">SEÑOR</a>
+                                <a href="../P_cantos/gloria.html">GLORIA</a>
+                                <a href="../P_cantos/aleluya.html">ALELUYA</a>
+                                <a href="https://drive.google.com/file/d/1FuD8FOhJwVJfg6nWwd6Xqk-js41SXGpR/view?usp=sharing">HONOR Y GLORIA</a>
+                                <a href="https://drive.google.com/file/d/1NLgZMYxM9iu-J57ZQ1TWLwxTyTfd4GEQ/view?usp=sharing">CANTO PARA EL ENCENDIDO DEL CIRIO</a>
+                                <a href="https://drive.google.com/file/d/1bzRlARk7DOicb2f-j4eE1-FobwCrpVPb/view?usp=sharing">CANTO PARA EL LAVATORIO DE PIES</a>
+                                <a href="https://drive.google.com/file/d/12bhuTAKJR820HS-4YDfPUINAK-av8alU/view?usp=sharing">CANTO PARA LA IMPOSICION DE LA CENIZA</a>
+                                <a href="https://drive.google.com/file/d/1Pux6k8seam_H5KrS9XRBQ6E582mfKt00/view?usp=sharing">CANTO PARA LA ASPERSION DEL AGUA BENDITA</a>
+                                <a href="https://drive.google.com/file/d/1CSX1T8AWKZCqC4ZXSNugrVczrjS242lY/view?usp=sharing">CANTO PARA LA ADORACION DE LA CRUZ</a>
+                                <a href="../P_cantos/ofertorio.html">OFERTORIO</a>
+                                <a href="../P_cantos/santos.html">SANTOS</a>
+                                <a href="https://drive.google.com/file/d/1qIZo5pd3pnMijTZdMEoUBagLSLmHbK1b/view?usp=sharing">AMEN</a>
+                                <a href="https://drive.google.com/file/d/18KKtnXP6r7jlExChvHoteJC17M1HfxqV/view?usp=sharing">ORACIONES</a>
+                                <a href="../P_cantos/corderos.html">CORDEROS</a>
+                                <a href="../P_cantos/comunion.html">COMUNION</a>
+                                <a href="../P_cantos/salida.html">SALIDA</a>
+                                CANTOS INTERMEDIOS
+                                <a href="../P_cantos/C_virgen.html">CANTOS A LA VIRGEN MARIA</a> 
+                                <a href="../P_cantos/C_niño.html">CANTOS AL NIÑO DE PRAGA</a> 
+                                <a href="../P_cantos/C_sagrado.html">CANTOS AL SAGRADO CORAZON DE JESUS</a> 
+                                <a href="../P_cantos/C_adoracion.html">CANTOS DE ADORACION</a> 
+                                <a href="../P_cantos/C_difunto.html">CANTOS DE DIFUNTO</a> 
+                                <a href="../P_cantos/C_navidad.html">CANTOS DE NAVIDAD</a> 
+                                <a href="../P_cantos/C_ramos.html">CANTOS PARA EL DOMINGO DE RAMOS</a>  
+                                <a href="../P_cantos/C_popurris.html">POPURRIS</a> 
+                                --> 
+                                <!-- ENTRADA -->
+                                <a href="https://drive.google.com/file/d/1WAKKWhNN9kGsmEJrmi1NXZ8dpJAXDA2u/view?usp=sharing">A TI LEVANTO MI OJOS</a>
+                                <a href="https://drive.google.com/file/d/1aDhC-4wOFXw4VoQh9fTd2AiZu9pvFhE0/view?usp=sharing">ALEGRE LA MAÑANA</a>
+                                <a href="https://drive.google.com/file/d/1mQdV-M_SKgrmVNFwI2j-NmBltocczdAR/view?usp=sharing">ALEGREMONOS TODOS</a>
+                                <a href="https://drive.google.com/file/d/1d4uyZeV8ML5sUCDv13ecSovrkGRO1d-O/view?usp=sharing">ALELUYA</a>
+                                <a href="https://drive.google.com/file/d/1dHfVJyEYhm7PHonJWrMwhQIXAgw82yXF/view?usp=sharing">ALREDEDOR DE TU MESA</a>
+                                <a href="https://drive.google.com/file/d/1nf2a3YWuIllvzY-dkOvINk9rYCEWSISH/view?usp=sharing">CAMINA PUEBLO DE DIOS</a>
+                                <a href="https://drive.google.com/file/d/1E18hSKMWCo9HOwiBirUNobdsRSmabVcj/view?usp=sharing">CAMINANDO DESDE ORIENTE</a>
+                                <a href="https://drive.google.com/file/d/1wD84j9qPkCsMzmjLTc52v-CdvqfH_iIG/view?usp=sharing">CAMINARE</a>
+                                <a href="https://drive.google.com/file/d/1Up2zp_jzZRncnBpZGpg8PwzwQJ8POupX/view?usp=sharing">CRISTO ENTRE NOSOTROS</a>
+                                <a href="https://drive.google.com/file/d/1FToJwzDtKWVQXDqJp66w319_Lp0tfWCz/view?usp=sharing">DE GOZO</a>
+                                <a href="https://drive.google.com/file/d/1-THoQGYIrbJUd_0dMJephagdoVXz56Qs/view?usp=sharing">DIOS ESPERA EN EL ALTAR</a>
+                                <a href="https://drive.google.com/file/d/1TkURT87VENI3iNsmi67AsuVoBg3_Ij7s/view?usp=sharing">DIOS NOS CONVOCA</a>
+                                <a href="https://drive.google.com/file/d/1bfKOLW5V4hNoAWbGmftpVZhFrbRK2-VM/view?usp=sharing">DIOS TRINO DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/15TWu1y7Coug9zalPF7ZYoIuznP8A_2f-/view?usp=sharing">DIVINO ESPIRITU</a>
+                                <a href="https://drive.google.com/file/d/1cRsHBBiOeDu7sU8rfvZM_4l5wmfinwEj/view?usp=sharing">EL RETORNO DEL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1hSvVcNyG3gjB0-eE81u7eeFdQzob6zLP/view?usp=sharing">EL SEÑOR ES MI LUZ</a>
+                                <a href="https://drive.google.com/file/d/16zafFkG7mT5I5Hr3bp-bO1FsgA5ofbTu/view?usp=sharing">GLORIA DE LOS ANGELES</a>
+                                <a href="https://drive.google.com/file/d/1TsNAOEuQssA79DDU-YhCrIUF9FUCb_a7/view?usp=sharing">HACIA TI MORADA SANTA</a>
+                                <a href="https://drive.google.com/file/d/12SNBiGwS18LC_bQAMAPC7faFU4QsFcET/view?usp=sharing">HIMNO A CRISTO REY</a>
+                                <a href="https://drive.google.com/file/d/1BxYV-CcpbHui5VeCqTCgwc-JqZoT0tq5/view?usp=sharing">HOSANNA AL HIJO DE DAVID</a>
+                                <a href="https://drive.google.com/file/d/1rvBRH9ZY_llywC82RBY9jnerF5NFqkR0/view?usp=sharing">HOY CANTAMOS</a>
+                                <a href="https://drive.google.com/file/d/1W-8InZS4dRpkdr0WBugWmJU6tkOjp_61/view?usp=sharing">JUNTOS CANTANDO LA ALEGRIA</a>
+                                <a href="https://drive.google.com/file/d/1bYxKHHf5-QES9i3NhshJx0ojtn7Ti7tP/view?usp=sharing">JUNTOS MARCHAMOS A TI</a>
+                                <a href="https://drive.google.com/file/d/1QhXWpFQakS1TAJUhS79pbYuQqu-LlucD/view?usp=sharing">JUNTOS MARCHAMOS HACIA A TI</a>
+                                <a href="https://drive.google.com/file/d/1JH3l8fnUt1efiPDZZK9fGHwD6a4Dn1GJ/view?usp=sharing">LA FIESTA DEL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1ZHUJHblCBB8ua0RjmT0HinH6eu75XqJ2/view?usp=sharing">LA MARIMORENA</a>
+                                <a href="https://drive.google.com/file/d/1hWwgCSyO8CQXTjO3gdEWrQQmSAxREjkZ/view?usp=sharing">LA MISA ES UNA FIESTA</a>
+                                <a href="https://drive.google.com/file/d/1qZUCuQqeifpw84rMFK4ZhtQPHE0umJzo/view?usp=sharing">MI ALMA ESPERA</a>
+                                <a href="https://drive.google.com/file/d/1y2_Mygu9wKf7JqRW1u3o0MNGS8KgPgvT/view?usp=sharing">MISERICORDIOSO</a>
+                                <a href="https://drive.google.com/file/d/1Jb64DMtA7pTb4S0dz19sAafIwqCfQzWB/view?usp=sharing">NO QUENDEN TRISTES</a>
+                                <a href="https://drive.google.com/file/d/1xwr6zDVmF6Ui0SM-4ZjdzFpksvuwAuUm/view?usp=sharing">NOS HAS LLAMADO</a>
+                                <a href="https://drive.google.com/file/d/1Uf83GCEmC8byU7t_uYqSeIg1JjepTt2X/view?usp=sharing">PERDONA A TU PUEBLO</a>
+                                <a href="https://drive.google.com/file/d/18B2R938XnSeoJ7Eu_hJ900CgDv7LovX3/view?usp=sharing">PREPAREN EL CAMINO</a>
+                                <a href="https://drive.google.com/file/d/1DhuliEftjXkbaz1ALfToEVeydePGJMdk/view?usp=sharing">PUEBLO DE REYES</a>
+                                <a href="https://drive.google.com/file/d/1_LJWJO5Uv2feDmR6_uBCB5M2KJ3efngA/view?usp=sharing">QUE ALEGRIA</a>
+                                <a href="https://drive.google.com/file/d/1y5a61Yu8xdvfnErUyEq69PhUBz5PTnnX/view?usp=sharing">QUINCE AÑOS CUMPLO</a>
+                                <a href="https://drive.google.com/file/d/10WpHcPuzjqNxoq_HzBlWcyuxpEN09Mrn/view?usp=sharing">RESUCITO</a>
+                                <a href="https://drive.google.com/file/d/1FhpCjp8kqSK9ujFES1ZCMTxIenOajEUg/view?usp=sharing">REUNIDOS EN EL NOMBRE</a>
+                                <a href="https://drive.google.com/file/d/18jBWTJVQUtglN978BwRvlsl5MgutuBgj/view?usp=sharing">SUENEN CAMPANAS</a>
+                                <a href="https://drive.google.com/file/d/1mvDqM662H_nQ3jyglVE-Gb8FFpV94ZS2/view?usp=sharing">TE VENIMOS A CANTAR</a>
+                                <a href="https://drive.google.com/file/d/15Irs37sblil24Ky6aq_8Qw9SFUU4WAEk/view?usp=sharing">TIEMPO DE ADVIENTO</a>
+                                <a href="https://drive.google.com/file/d/1Mry9UsTxXUOjPZFzY_oBkCH18KocG_SM/view?usp=sharing">TODO TU PUEBLO</a>
+                                <a href="https://drive.google.com/file/d/1TD6i5RPSvI-dE7Ikcl_VOQ7luSlZLcd7/view?usp=sharing">TODOS JUNTOS</a>
+                                <a href="https://drive.google.com/file/d/1zobx2wgtMP0zJ1Yh1_7XvIzFxv_YKeTS/view?usp=sharing">TODOS UNIDOS</a>
+                                <a href="https://drive.google.com/file/d/17kXDumm_oHOzXY7Gmq9R8FPhKMykAKEH/view?usp=sharing">TU ERES PEDRO</a>
+                                <a href="https://drive.google.com/file/d/1kmQQF2dxOLWRI4teT8Jkt3YNOh_alASa/view?usp=sharing">TU PALABRA ME DA VIDA</a>
+                                <a href="https://drive.google.com/file/d/10uLnsZKDV_lE-0M6-OCmUZ7oDSowAgR1/view?usp=sharing">VAMOS CAMINANDO</a>
+                                <a href="https://drive.google.com/file/d/1l4Qucx42xMLZy2X9W_FOIbX_kEx5qsMn/view?usp=sharing">VAMOS NIÑOS AL SAGRARIO</a>
+                                <a href="https://drive.google.com/file/d/194I7BlripYDsE3uI71gdU_K_JJWyaxkG/view?usp=sharing">VAMOS, VAMOS</a>
+                                <a href="https://drive.google.com/file/d/1gRXxqRtOrnunmpXmRCNuXnxSYpM38lD-/view?usp=sharing">VEN DIVINO REDENTOR</a>
+                                <a href="https://drive.google.com/file/d/18bsTOsp53zEosyrVerV5tDbEvUjwhvyJ/view?usp=sharing">VEN SEÑOR JESUS</a>
+                                <a href="https://drive.google.com/file/d/1e0Sn-gxA6Dcai8s-JX_0WBgYGVwgkUQu/view?usp=sharing">VEN SEÑOR NO TARDES</a>
+                                <a href="https://drive.google.com/file/d/1Clf8GOc1EMbqIH5GrMnJG7nUON_9iWpV/view?usp=sharing">VENID A CELEBRAR</a>
+                                <a href="https://drive.google.com/file/d/11mdzAFJoXvfWLLg7DU_MQ6Bk03gYW7sC/view?usp=sharing">VENIMOS ANTES TI SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1rjidx9dfNcJgWMZg6RcUQzu9hDFljbbr/view?usp=sharing">VENIMOS HOY A TU ALTAR</a>
+                                <a href="https://drive.google.com/file/d/1gRJD7MM17x0E_JIZ_hr-YqVuOXK3WmPc/view?usp=sharing">VIENEN CON ALEGRIA</a>
+                                <a href="https://drive.google.com/file/d/1jrijufOAZG5i8DEJdbK7pPAbsnkEPxHi/view?usp=sharing">YA VIENEN LOS REYES MAGOS</a>
+                                <a href="https://drive.google.com/file/d/1Rd0gkFqBiNXSBOaT91iz6NMcGDPh3FDH/view?usp=sharing">YO SIENTO SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1v36BhoY5heiuPwUHZC3gjiauSqFpzCZK/view?usp=sharing">YO VENGO DEL SUR</a>
+                                <a href="https://drive.google.com/file/d/1QYxdlF3Oc3yyrG_GAyM21e0pOR7VtQik/view?usp=sharing">YO VOY CANTANDO ALEGRE</a>
+                                <!--CANTO PARA LA CORONA DE ADVIENTO-->
+                                <a href="https://drive.google.com/file/d/1ofSu8oTIeMPyFS0-8og8CRjumg6m9xQl/view?usp=sharing">CANTO PARA LA CORONA DE ADVIENTO</a>
+                                <!-- SEÑOR -->
+                                <a href="https://drive.google.com/file/d/1HkSTiQEMApHkPUHs9_5bL5bXfrqUL-Ka/view?usp=sharing">SEÑOR HOJA 1</a>
+                                <a href="https://drive.google.com/file/d/1o4as-4KtXJ18ZjWpwLg-LuT69Of7lDmf/view?usp=sharing">SEÑOR HOJA 2</a>
+                                <a href="https://drive.google.com/file/d/1zsHbwCCVVct0xmQrRWbRxKujdwZMiZzT/view?usp=sharing">SEÑOR HOJA 3</a>
+                                <!--GLORIA-->
+                                <a href="https://drive.google.com/file/d/12PPiCeaxrmcN_fto2i1tMQByJQnNnzWQ/view?usp=sharing">GLORIA 2 RITMOS</a>
+                                <a href="https://drive.google.com/file/d/1io69eSSs0faX_CZmODyQQNRzbhGzyK5L/view?usp=sharing">GLORIA A DIOS EN EL CIELO</a>
+                                <a href="https://drive.google.com/file/d/1kI2pa8mmfwDKkb1UA0HvVdggGZQc-Fau/view?usp=sharing">GLORIA A DIOS EN LAS ALTURAS</a>
+                                <a href="https://drive.google.com/file/d/1s3qtpaEIbS4DbTMr5j5xnGpoK7PGdhVX/view?usp=sharing">GLORIA ARMONICO</a>
+                                <a href="https://drive.google.com/file/d/1QYXIu-v6TAgkgp-BW88e2muDIE-8bgfD/view?usp=sharing">GLORIA MEJIA</a>
+                                <a href="https://drive.google.com/file/d/1EWGAS8TbgWEErXSAaao2Byaa5hASqAgZ/view?usp=sharing">GLORIA MELODICO</a>
+                                <a href="https://drive.google.com/file/d/1GKltsUrTquH3oHxu58OpmgNXSfp1G2U6/view?usp=sharing">GLORIA MISA GUADALUPANA</a>
+                                <a href="https://drive.google.com/file/d/1t6XiJ5WAiSApFmDnVzQKuUlsD4XV8j8M/view?usp=sharing">GLORIA PANAMERICANO</a>
+                                <a href="https://drive.google.com/file/d/1Simu-FHICttvdfy3epHAsBzRp9Z_RIt8/view?usp=sharing">GLORIA POPULAR</a>
+                                <a href="https://drive.google.com/file/d/1EsKIkqVg9TbSces8PRhgr338jqmGm4Iq/view?usp=sharing">GLORIA RANCHERO</a>
+                                <!--ALELUYA-->
+                                <a href="https://drive.google.com/file/d/1UQS-S-Q0zyOASXSB1HsdkS-OuQ-5ea46/view?usp=sharing">ALELUYA HOJA 1</a>
+                                <a href="https://drive.google.com/file/d/1H48U1I1ytMnFX1tMr8mIOd3BISc88Sf4/view?usp=sharing">ALELUYA HOJA 2</a>
+                                <!--HONOR Y GLORIA-->
+                                <a href="https://drive.google.com/file/d/1FuD8FOhJwVJfg6nWwd6Xqk-js41SXGpR/view?usp=sharing">HONOR Y GLORIA</a>
+                                <!-- CANTO PARA EL ENCENDIDO DEL CIRIO-->
+                                <a href="https://drive.google.com/file/d/1NLgZMYxM9iu-J57ZQ1TWLwxTyTfd4GEQ/view?usp=sharing">CANTO PARA EL ENCENDIDO DEL CIRIO</a>
+                                <!-- CANTO PARA EL LAVATORIO DE PIES-->
+                                <a href="https://drive.google.com/file/d/1bzRlARk7DOicb2f-j4eE1-FobwCrpVPb/view?usp=sharing">CANTO PARA EL LAVATORIO DE PIES</a>
+                                <!-- CANTO PARA LA IMPOSICION DE LA CENIZA -->
+                                <a href="https://drive.google.com/file/d/12bhuTAKJR820HS-4YDfPUINAK-av8alU/view?usp=sharing">CANTO PARA LA IMPOSICION DE LA CENIZA</a>
+                                <!-- CANTO PARA LA ASPERSION DEL AGUA BENDITA -->
+                                <a href="https://drive.google.com/file/d/1Pux6k8seam_H5KrS9XRBQ6E582mfKt00/view?usp=sharing">CANTO PARA LA ASPERSION DEL AGUA BENDITA</a>
+                                <!-- CANTO PARA LA ADORACION DE LA CRUZ -->
+                                <a href="https://drive.google.com/file/d/1CSX1T8AWKZCqC4ZXSNugrVczrjS242lY/view?usp=sharing">CANTO PARA LA ADORACION DE LA CRUZ</a>
+                                <!-- OFERTORIO -->
+                                <a href="https://drive.google.com/file/d/1v1Ok6rK6BeQKSSrnB8h7I_VKxsS6r_1P/view?usp=sharing">ACEPTA SEÑOR ESTE PAN</a>
+                                <a href="https://drive.google.com/file/d/1auu-lf2Q8kxlGnMgwauLRfNtnvSAKgHW/view?usp=sharing">ACEPTA SEÑOR NUESTROS DONES</a>
+                                <a href="https://drive.google.com/file/d/1tvsKeZvwCu0n7nzlvmm9WUUGC-vYWDt8/view?usp=sharing">AL PIE DEL ALTAR</a>
+                                <a href="https://drive.google.com/file/d/1-fPAjyAmqY8yDonwFCdStMy2HeevxTDE/view?usp=sharing">BENDITO SEAS PADRE</a>
+                                <a href="https://drive.google.com/file/d/1YoO5_ux9UpBY30SnJVIbjUx0biScxBxu/view?usp=sharing">CAMINO CUARESMAL</a>
+                                <a href="https://drive.google.com/file/d/1WuaPJSGvKvTnodQsBBXO8skm_iymgBDN/view?usp=sharing">CORPUS OBLATIONES</a>
+                                <a href="https://drive.google.com/file/d/1wZG4gvYxfaG8mgCh2oC3ba8H3lOXJ1Gk/view?usp=sharing">DIOS Y HOMBRE</a>
+                                <a href="https://drive.google.com/file/d/1o7uC-b4trktw3ZLXpMVxTWXUPTp820lw/view?usp=sharing">DONES DE TRINIDAD</a>
+                                <a href="https://drive.google.com/file/d/1Lsmwn-Ddgu7AV6LgGcgPHd0NcpEvuxrz/view?usp=sharing">EL GRANO EN LA TIERRA</a>
+                                <a href="https://drive.google.com/file/d/1Zk_MfMNaELbIVIv7Rz1OIi8TPJL2wZiw/view?usp=sharing">EL NIÑO DEL TAMBOR</a>
+                                <a href="https://drive.google.com/file/d/1F_QTfo0MV5ThjdDKqIHdpKp_uf6P6yGi/view?usp=sharing">EN LA ESPERA</a>
+                                <a href="https://drive.google.com/file/d/131W8YWSyti--6F37jV9poCxXOeAex6l_/view?usp=sharing">ENTRE TUS MANOS</a>
+                                <a href="https://drive.google.com/file/d/1ssNZofI6dDlkmUKl5P4vYX49Qm_CRl-U/view?usp=sharing">ESPERAMOS SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1RkboUTJn-buz5Kd6jty7UF8tvqQ2-pdH/view?usp=sharing">ESPERANDO LA VENIDA</a>
+                                <a href="https://drive.google.com/file/d/1MxG8_tZsAH6QchYay5l5F1y4CQsRH_Aj/view?usp=sharing">ESTO QUE TE DOY</a>
+                                <a href="https://drive.google.com/file/d/1zKEy1x1yjRrkhv9WY5xLD_DqepcSEZYN/view?usp=sharing">HEMOS ENTREGADO</a>
+                                <a href="https://drive.google.com/file/d/12fHwv3TF3trATbI5QijHenRd18E15Jet/view?usp=sharing">HOY YO TE OFREZCO</a>
+                                <a href="https://drive.google.com/file/d/1MXP8lPKzRuMISa5fdDMmTFRgdLwkBsOV/view?usp=sharing">JOVENES DE CORAZON</a>
+                                <a href="https://drive.google.com/file/d/1o_KP6OxQnkP6W8x4yNKX6hrHsJgbnmKZ/view?usp=sharing">JUNTOS NOS ACERCAMOS</a>
+                                <a href="https://drive.google.com/file/d/18OOlqZkpCN4Zp4BR1rhhx24o0c0GQpFe/view?usp=sharing">LLEVEMOS AL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1tB6ewqXWkWwobARddDUGaVMJtbrHLa7g/view?usp=sharing">LOS CINCO PANES</a>
+                                <a href="https://drive.google.com/file/d/11PYW0ek4VTRggAOL1yad8TNbQcHUWi9F/view?usp=sharing">OFRENDA DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1906dE18FclR9vomKPZuPv3J2lAnZTd6V/view?usp=sharing">OFRENDA DE BELEN</a>
+                                <a href="https://drive.google.com/file/d/1dQNj81BxR11hw_LvI-MNXHJ2hk6TGSYI/view?usp=sharing">OFRENDA DE RAMOS</a>
+                                <a href="https://drive.google.com/file/d/1qdaxM7yprAEepqAMXftlumgqHGBGTb_H/view?usp=sharing">OFRENDAS AL NIÑO</a>
+                                <a href="https://drive.google.com/file/d/1Pdrzncox85XAofqIjJKDxuba18F0Y5lC/view?usp=sharing">PADRE TE OFRECEMOS</a>
+                                <a href="https://drive.google.com/file/d/1HA3DCZfOusc-I_kXaw4FkM6qCcb7NNKj/view?usp=sharing">PAN DE LOS TRIGALES</a>
+                                <a href="https://drive.google.com/file/d/1djk7OSturRrlOLz7TKZGrx2LdIt3z55x/view?usp=sharing">PAN Y VINO ANTE TI</a>
+                                <a href="https://drive.google.com/file/d/1lfji-pTNsAP0XQv-ekWztR-0IZqpRU2O/view?usp=sharing">PARA TI ES MI MUSICA</a>
+                                <a href="https://drive.google.com/file/d/1hNK4FHia0_Kj_xc32_AF1bXh9j1pnt6J/view?usp=sharing">POR AMOR</a>
+                                <a href="https://drive.google.com/file/d/1kxKg60lIVvM3x2eQyqZ4sNzNDTPwLLZ1/view?usp=sharing">PRESENTAMOS PAN Y VINO</a>
+                                <a href="https://drive.google.com/file/d/1xG6dOaOLzxRF-sQLO1VzVEKw2BQSWQJd/view?usp=sharing">PRESENTAMOS VINO Y PAN</a>
+                                <a href="https://drive.google.com/file/d/1YAySY9J89uTqBfBRqhDsML02sqkjRpxw/view?usp=sharing">RACIMO Y TRIGAL</a>
+                                <a href="https://drive.google.com/file/d/1ngogAxYqwZX_dzWPVH9Vp8XQyWtD1tMA/view?usp=sharing">RECIBE OH PADRE SANTO</a>
+                                <a href="https://drive.google.com/file/d/1E9Uz2uL09gF3lpYDKNCI7OP1aElSX-uX/view?usp=sharing">RECIBEME</a>
+                                <a href="https://drive.google.com/file/d/1IiRlR9SnVTXDjcrstfF76xFiGWtW2gLE/view?usp=sharing">RECUERDA SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1qmur-BmufUM_RzC0sFfxUuOgYwnjTvVp/view?usp=sharing">SEÑOR TE OFRECEMOS</a>
+                                <a href="https://drive.google.com/file/d/1Cqnlkqr3xxtxeZmRqQstaA6viAhfTm2Y/view?usp=sharing">TE OFRECEMOS NUESTRA JUVENTUD</a>
+                                <a href="https://drive.google.com/file/d/1GlW94NS-AKFO9mzqXOuYZ53F_E56Ajdo/view?usp=sharing">TE OFRECEMOS OH SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1y7uctGTgk800vm5m5chwqCxckYTqkGYN/view?usp=sharing">TE OFRECEMOS PADRE</a>
+                                <a href="https://drive.google.com/file/d/1SZB0K7fVgstERiu5zWr8oRJmcSrav2xs/view?usp=sharing">TE OFRECEMOS SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1YkgFAK8zBq1CZ5oDEEbXtkNtys3BZg7A/view?usp=sharing">TE PRESENTAMOS</a>
+                                <a href="https://drive.google.com/file/d/13tShzWroZI-CjuYxp6VWX_5BcENqYkVC/view?usp=sharing">TOMAD SEÑOR Y RECIBID</a>
+                                <a href="https://drive.google.com/file/d/1uw8NHk-63BO6xGJgyexmgwjQQZm0a0Me/view?usp=sharing">UN DIA DE BODAS</a>
+                                <a href="https://drive.google.com/file/d/1bY6ySK0z5CumgDv70Jt1TTOAztrvPzvi/view?usp=sharing">UN POCO DE VINO</a>
+                                <a href="https://drive.google.com/file/d/1fyWJgM7S1VtYJsRT8GndF_DRcHAWPzWZ/view?usp=sharing">VEN AL ALTAR</a>
+                                <a href="https://drive.google.com/file/d/1vrvCpfDNmjTIR54Bq3ljS_dAviRqOROF/view?usp=sharing">VINO Y PAN</a>
+                                <!-- SANTO -->
+                                <a href="https://drive.google.com/file/d/19ERL-b7A6IBKJ2AH656f0-WiEd8d_ZLO/view?usp=sharing">SANTO HOJA 1</a>
+                                <a href="https://drive.google.com/file/d/1nCfgmH6AtJCsw4Rz0PS9QLuekCcE0ACP/view?usp=sharing">SANTO HOJA 2</a>
+                                <a href="https://drive.google.com/file/d/1RxBI_F-KOsVFGYmab7Rq8v0-LPLq9DAc/view?usp=sharing">SANTO HOJA 3</a>
+                                <a href="https://drive.google.com/file/d/1COBsJDUgiZ896Q9cfo1xh-H6WDzjIeu3/view?usp=sharing">SANTO HOJA 4</a>
+                                <!-- AMEN -->
+                                <a href="https://drive.google.com/file/d/1qIZo5pd3pnMijTZdMEoUBagLSLmHbK1b/view?usp=sharing">AMEN</a>
+                                <!-- ORACIONES -->
+                                <a href="https://drive.google.com/file/d/18KKtnXP6r7jlExChvHoteJC17M1HfxqV/view?usp=sharing">ORACIONES</a>
+                                <!-- CORDERO -->
+                                <a href="https://drive.google.com/file/d/1cE4Q_Zn0F9hlT4TZwRrxJKP6UqhFQSIG/view?usp=sharing">CORDEROS HOJA 1</a>
+                                <a href="https://drive.google.com/file/d/1F7me9ZvfzCRpZjJjic6DxZMO7P7VLwee/view?usp=sharing">CORDEROS HOJA 2</a>
+                                <a href="https://drive.google.com/file/d/1Zcnv1jlrV_w-V4_0m7tLev2eyYO7akN_/view?usp=sharing">CORDEROS HOJA 3</a>
+                                <!-- COMUNION -->
+                                <a href="https://drive.google.com/file/d/1JsA-euh3N4flNAk8PRQtm0SC8VnLUM96/view?usp=sharing">ABRE TU TIENDA AL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1mZahIaKwDC7_1_MTfEDWOgh-VJ7xgkj6/view?usp=sharing">AL CONTEMPLARTE</a>
+                                <a href="https://drive.google.com/file/d/1KO3bOyG4bBDOAj0_zkkbulRoJ9QlVX8S/view?usp=sharing">AMOR DE LOS AMORES</a>
+                                <a href="https://drive.google.com/file/d/1Bkw4tMSmaDiq5QtkGvogVXn08uNRv6GQ/view?usp=sharing">BENDITO, BENDITO</a>
+                                <a href="https://drive.google.com/file/d/1ITZ5rWnt9THAZ96bXI2l8CMTDzCvFauP/view?usp=sharing">BIENAVENTURADOS</a>
+                                <a href="https://drive.google.com/file/d/1qE1-CCuSp8XfkJucCCddOovEhIJQTjSy/view?usp=sharing">BODAS DE CANA</a>
+                                <a href="https://drive.google.com/file/d/1bnO3K3pGNdkG-jCPh7rTJYv95sqsr-nd/view?usp=sharing">BODAS DEL CORDERO</a>
+                                <a href="https://drive.google.com/file/d/1NLcuCuvKJkfkTjPUZu4IRGVSLCs7NRmP/view?usp=sharing">CAMINO VIDA Y VERDAD</a>
+                                <a href="https://drive.google.com/file/d/11-bKbNLdbFVlcZBIV3egPJDyFzHiY_cj/view?usp=sharing">COMIENDO DEL MISMO PAN</a>
+                                <a href="https://drive.google.com/file/d/1RUhEh9jos_Zo7VzRTMl79C09fyaQ9JoS/view?usp=sharing">COMO BUSCA LA CIERVA</a>
+                                <a href="https://drive.google.com/file/d/1Jnp6kT0WcxYsldkttFpdYaZX_cpvs3RF/view?usp=sharing">COMO EL PADRE</a>
+                                <a href="https://drive.google.com/file/d/1PnOmuVDvUqrr5STlWfzqhW5GzMf0UQBj/view?usp=sharing">CRISTO TE NECESITA</a>
+                                <a href="https://drive.google.com/file/d/1OLbU3y0D2yEJ7Jzm8fNPiYQzIY371eIs/view?usp=sharing">CUERPO SANGRE ALMA</a>
+                                <a href="https://drive.google.com/file/d/1bovoE6Nkddm48UE_Wxxn2LaRqRqiaPyS/view?usp=sharing">DIOS ES AMOR</a>
+                                <a href="https://drive.google.com/file/d/1zleP7Bq7z2716yEPo8LdF3tQiCs7h4ue/view?usp=sharing">DIOS ES FIEL</a>
+                                <a href="https://drive.google.com/file/d/1icZKzlqcenctiiZDPuPKSteb0MzXBaQj/view?usp=sharing">DIOS NOS DA SU PAN</a>
+                                <a href="https://drive.google.com/file/d/1Nubv9njLeOSeENPkQ-d_LbknTlVJSZIW/view?usp=sharing">DIVINO MANJAR</a>
+                                <a href="https://drive.google.com/file/d/1hlJ2RtQkgWCMJgpynS6WEm8LbSMa-0uh/view?usp=sharing">EL DIOS UNO Y TRINO</a>
+                                <a href="https://drive.google.com/file/d/1CqrEJCvZ5UKLNK79FANq19twMbrCFoET/view?usp=sharing">EL SEÑOR ES MI PASTOR</a>
+                                <a href="https://drive.google.com/file/d/1KqtUpwGTWnBu9MPrfS1Y9rb22L1Wkc2c/view?usp=sharing">EL VIÑADOR</a>
+                                <a href="https://drive.google.com/file/d/1bcG2qrOMJctMMHbX5aF4-GN-iq6p_zaR/view?usp=sharing">EN LA VIÑA DEL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1ON0LZZh3LksDTyR_9T7Y7ivWg4sO2BrL/view?usp=sharing">ENTRA</a>
+                                <a href="https://drive.google.com/file/d/16VJl-vU0a7jnBgcysQEQaPmNB_Iac18W/view?usp=sharing">ESPIRITU SANTO VEN</a>
+                                <a href="https://drive.google.com/file/d/1XBMDYw5y26tQw8rDpuflD--JoDM5IcyV/view?usp=sharing">ESTAS AQUI</a>
+                                <a href="https://drive.google.com/file/d/1XZeiXnzldzLRGcTLcKUYjdXYtIqBjixL/view?usp=sharing">ESTE ES EL AYUNO</a>
+                                <a href="https://drive.google.com/file/d/1Ny2V7Nt0e_3SSA4dXVpM0CiEjhjj94JM/view?usp=sharing">EUCARISTIA DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1iZJuHo0D79MKDeIYER88grYIGZHjZaY-/view?usp=sharing">EUCARISTIA</a>
+                                <a href="https://drive.google.com/file/d/17Md3N-1erPHvJJGVaKJt7nUEYDuW8EP9/view?usp=sharing">GRACIAS SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1-SGAH25HNuseiHm5_NbZYNibpQKjFgE6/view?usp=sharing">GRANDE MISTERIO DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1Y1q7JMmiIVujx8zwMXPqWlJuhWKCfZEo/view?usp=sharing">HIMNO A SAN ISIDRO</a>
+                                <a href="https://drive.google.com/file/d/1LVeGp4cpixiLdTyzjU2VwEaE-DSzeS2K/view?usp=sharing">HIMNO EUCARISTICO</a>
+                                <a href="https://drive.google.com/file/d/1cegtd3TRDpOqwqvIuvAVkCvdMh8I5Ur3/view?usp=sharing">IN PERSONA CHRISTI</a>
+                                <a href="https://drive.google.com/file/d/1DmNmPM79M4_EJsqjb6eFUv8YCr7WUHT4/view?usp=sharing">JESUS AMIGO</a>
+                                <a href="https://drive.google.com/file/d/1blq6kL-pkRXtmlv3iuThG7dj9HHKccyu/view?usp=sharing">JESUS ESTA VIVO</a>
+                                <a href="https://drive.google.com/file/d/1pcA02CuRZ7OD8CDhyMFXxCRXAOOjhxLn/view?usp=sharing">JESUS PAN DEL CIELO</a>
+                                <a href="https://drive.google.com/file/d/1SUPmllDkkh7QXoXRdX8aGV7_l0paDlNC/view?usp=sharing">LA SANGRE DE CRISTO</a>
+                                <a href="https://drive.google.com/file/d/1zit2O6S5TTMZsisbLOjqfsL4nKLGcTjP/view?usp=sharing">LA TRANSFIGURACION</a>
+                                <a href="https://drive.google.com/file/d/1t9oj6DdNMbbU1PgI_JiW0EPy_oWi7kKW/view?usp=sharing">LOS REYES DE ORIENTE</a>
+                                <a href="https://drive.google.com/file/d/1IoK-0tf8M28M3W_r4fSvUsDLjX-uCmAx/view?usp=sharing">MADRE DEL DIVINO PAN</a>
+                                <a href="https://drive.google.com/file/d/1MgH0aXBbaY6nk_Ym1IH-Qhc7tUjjpcvw/view?usp=sharing">MI JESUS SACRAMENTADO</a>
+                                <a href="https://drive.google.com/file/d/1xXutqeqKxWDhLQIHJg9RTMKE4i2UENBU/view?usp=sharing">MILAGRO DE AMOR</a>
+                                <a href="https://drive.google.com/file/d/1WS7sCI4i6c9LaxOsuQ5rsl-aUj6ZId_q/view?usp=sharing">NO PODEMOS CAMINAR</a>
+                                <a href="https://drive.google.com/file/d/1w7z98_jmZ65_f1IBlxwClavsKtYUvYCo/view?usp=sharing">NO SOLO DE PAN</a>
+                                <a href="https://drive.google.com/file/d/1keMg3kcfKnV8U6xKT1Mm6sTJvyDvWzKm/view?usp=sharing">NOCHE DE PAZ</a>
+                                <a href="https://drive.google.com/file/d/1ud5CwLmM4nJYaLVK2PJEsIIQ6_5FQ6GA/view?usp=sharing">OH BUEN JESUS</a>
+                                <a href="https://drive.google.com/file/d/1mV1tlRNJkM9vwKAr3R98kSTywi8wx5F-/view?usp=sharing">OH SEÑOR DELANTE DE TI</a>
+                                <a href="https://drive.google.com/file/d/1eEVv0yLoJlqBWKgqfIC87qb2rm24FbQS/view?usp=sharing">OH VEN EMMANUEL</a>
+                                <a href="https://drive.google.com/file/d/1E-u55y_JXynWDXW5TBfVHFIwtPRfPaqJ/view?usp=sharing">PADRE MIO</a>
+                                <a href="https://drive.google.com/file/d/1jcovf4ACkhBeHm8ZvPqlvpBKt4Aae7fj/view?usp=sharing">PAN TRASFORMADO</a>
+                                <a href="https://drive.google.com/file/d/1NYqmvljlG2iPkcM3Lp5TbMxmy9XSFLLd/view?usp=sharing">PERDONANOS</a>
+                                <a href="https://drive.google.com/file/d/1_jBr9NIRJROl9RuXBMe19ZfCcKODcB0x/view?usp=sharing">POR ADAN</a>
+                                <a href="https://drive.google.com/file/d/1y8gp2WHVTI7PiFKvD0FhKKm9Cv2_ZbYY/view?usp=sharing">POR LA CALZADA DE EMAUS</a>
+                                <a href="https://drive.google.com/file/d/14PpAvx9GN3MbYDTcA5JyRvEs0MYz0PnM/view?usp=sharing">QUE BUENO ES EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1txWaZML2qzcJ9kErmTMnwxdaN8H6K8uM/view?usp=sharing">SACERDOTE POR SIEMPRE</a>
+                                <a href="https://drive.google.com/file/d/1Js2u5V2dHfm44pcTUglgEQLsCI-EHjVA/view?usp=sharing">SACRAMENTO DE LA COMUNION</a>
+                                <a href="https://drive.google.com/file/d/1ebpbHSdRJBQEx6LAcG6Hy-GkCT8vqELs/view?usp=sharing">SEÑOR PERMITE</a>
+                                <a href="https://drive.google.com/file/d/1jcb4MZS3fOWzD4wPwO1lzi1e2bXv5Osr/view?usp=sharing">SEÑOR TU ERES EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1Yb2BYma5-JcF2SgkV68jt2YgdcYQAh73/view?usp=sharing">SI ME LEVANTARE</a>
+                                <a href="https://drive.google.com/file/d/1LFTNNSmJuaONoZZ1R4QlDneQlvoBluHl/view?usp=sharing">SI YO NO TENGO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1XP1SvLSEkeHwrMM2BG_aijP1GEK5_71B/view?usp=sharing">SYMBOLUM</a>
+                                <a href="https://drive.google.com/file/d/13BZDyPUeXoURQ2bq1ioJptIat-MIJ6aa/view?usp=sharing">TAN CERCA DE TI</a>
+                                <a href="https://drive.google.com/file/d/1w_16mU4-phrFW3DQYCsn_Jg3y66183_H/view?usp=sharing">TENGO SED DE TI</a>
+                                <a href="https://drive.google.com/file/d/1FCKlsE_8Hq5OxTYN-NzaHojnm0bQgTzM/view?usp=sharing">TOMAD Y COMED</a>
+                                <a href="https://drive.google.com/file/d/1wrjmDXParRamWmExZB44U2bnYcsZy4up/view?usp=sharing">TU HAS VENIDO</a>
+                                <a href="https://drive.google.com/file/d/1Sxwt2p2dPFMONzr29WYNePH9gpm3cRO1/view?usp=sharing">TU NOS INVITAS</a>
+                                <a href="https://drive.google.com/file/d/1iwrciP86OyCwJHnl6EoIwhpa0tr7DoVO/view?usp=sharing">TU REINARAS</a>
+                                <a href="https://drive.google.com/file/d/1QFmj1mTFgg-CJSTqiHnD6FEtRo0u4HXT/view?usp=sharing">TU ROSTRO EN EL PAN</a>
+                                <a href="https://drive.google.com/file/d/1XpOIEV5cODt-e_BJYZ08uh4EfZwkDeQo/view?usp=sharing">UN ROSTRO</a>
+                                <a href="https://drive.google.com/file/d/19k4tjGIKWheIhUq3lbrOC67BexFcQKdU/view?usp=sharing">UNA ESPIGA</a>
+                                <a href="https://drive.google.com/file/d/1PpQLoU3p1MkS9A9HstleRWJqQd-1T1NO/view?usp=sharing">UNIDOS EN TI</a>
+                                <a href="https://drive.google.com/file/d/1sxZQo1rqd9L33sm9k3d5-Mv-tPCrz6o1/view?usp=sharing">VEN A MI DULCE PAN</a>
+                                <a href="https://drive.google.com/file/d/1UNlW24tDmriuiBcfuaK4CrUdNYG0sopO/view?usp=sharing">VEN A MI</a>
+                                <a href="https://drive.google.com/file/d/1tcvLuNRwWLCgK18bIr1md5dT-VEzzf0b/view?usp=sharing">VENID GUSTAD</a>
+                                <a href="https://drive.google.com/file/d/1Uf0ynxlt8V7aiFEWZoVDAD8qlE3zg1Ir/view?usp=sharing">VERBUM PANIS</a>
+                                <a href="https://drive.google.com/file/d/1WCq9iM01LUAqgtRRvTFRUyNbFQNl9sbG/view?usp=sharing">VETE Y NO PEQUES MAS</a>
+                                <a href="https://drive.google.com/file/d/1Phqu_Ni8DznTHn7KfS_n6zx_9jvw4Ws4/view?usp=sharing">YA NO ERES PAN Y VINO</a>
+                                <a href="https://drive.google.com/file/d/1NkpHBlXX47X55np4eEpfTvMP5XRy3YVo/view?usp=sharing">YO SOY EL PAN DE VIDA</a>
+                                <!-- SALIDA -->
+                                <a href="https://drive.google.com/file/d/1gKwxUgHXDewhaW09JUHSyeOEY26VTp8H/view?usp=sharing">A TI VIRGENCITA</a>
+                                <a href="https://drive.google.com/file/d/1OlBgdISOJoD7xSoRIDDfsP970RuETGY8/view?usp=sharing">ACEPTA SU REGALO</a>
+                                <a href="https://drive.google.com/file/d/1dcbVH5KHqaxr7H7_edkoZaFyVcjMkT3K/view?usp=sharing">ALMA DE CRISTO</a>
+                                <a href="https://drive.google.com/file/d/16Vvp4L3zM084tTCXoQUdSXG98OwIacU8/view?usp=sharing">AMEMONOS DE CORAOZON</a>
+                                <a href="https://drive.google.com/file/d/1je4-6W8n3BS7VWF7Mnb6fG1pR0dpnUIY/view?usp=sharing">AMOR SOLO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1QwrUnm_7FdN1H2hmA5a_um-BJSjls3gC/view?usp=sharing">AVE DE FATIMA</a>
+                                <a href="https://drive.google.com/file/d/1Hr-ulhZkqn3GTm8yCFbmh3r2EZ8WvpGV/view?usp=sharing">AY DEL CHIQUIRRITIN</a>
+                                <a href="https://drive.google.com/file/d/1CLgXNpHfhPWn-ct6ubMjVLd1-17n9--M/view?usp=sharing">BUENOS DIAS PALOMA</a>
+                                <a href="https://drive.google.com/file/d/15SJY63jEUSPvkgY2khHpG2kZ_i8QbXoW/view?usp=sharing">CERCA ESTA</a>
+                                <a href="https://drive.google.com/file/d/1il2I42CJGFj8N3Pc4-2jgJdeDnHVlZbB/view?usp=sharing">CONTIGO MARIA</a>
+                                <a href="https://drive.google.com/file/d/1xfHBrE0xlOhoY1NqrzawjioJl1mtKupa/view?usp=sharing">CUANDO ERA PEQUEÑO</a>
+                                <a href="https://drive.google.com/file/d/1zcpQxxTnRmVq4fCpBpFYf1YazftvbIj5/view?usp=sharing">DE DOS EN DOS</a>
+                                <a href="https://drive.google.com/file/d/1CocC3LvJcE3_ryEyGENsOpW-miJEFn28/view?usp=sharing">DEJA TU PATRIA</a>
+                                <a href="https://drive.google.com/file/d/11c8pAqhPB4lXzbduHpPKdh-r3s2wqFyB/view?usp=sharing">DEMOS GRACIAS</a>
+                                <a href="https://drive.google.com/file/d/1pcudsWm0SRntIZFQwz15Sis08mEpgLOC/view?usp=sharing">DIOS TE SALVE PALOMITA</a>
+                                <a href="https://drive.google.com/file/d/19UL27kcAUTCLpZ3NPzTJvtwUWblvT1DN/view?usp=sharing">DULCE MADRE</a>
+                                <a href="https://drive.google.com/file/d/1luHOijsRD5KsHy8J_mvuCS5ZRp618Bvp/view?usp=sharing">EN JESUS</a>
+                                <a href="https://drive.google.com/file/d/1laKYY88QbzBgfauS9k3-ckMSAD81YlmU/view?usp=sharing">EN TU DIA</a>
+                                <a href="https://drive.google.com/file/d/1ElXD89Ry71xZdlKTZZmgV_mgY-0IQGUe/view?usp=sharing">ESCONDETE EN LAS MANOS</a>
+                                <a href="https://drive.google.com/file/d/1HQn_h920q3MLZzv7F9mlgUBQ_xT5KKP-/view?usp=sharing">ESTOY PENSANDO EN DIOS</a>
+                                <a href="https://drive.google.com/file/d/1t_Dj6mZV5puJy8Na2nK1Y7TUVP6Qcgi8/view?usp=sharing">GRACIAS TE DOY SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1kgwc-iJri7XPpIJuOwD2Qd5iKtx9cU25/view?usp=sharing">HAZME UN INSTRUMENTO</a>
+                                <a href="https://drive.google.com/file/d/1upeRe2wNeYR6ld9aIxBx5csz8WxHbuiJ/view?usp=sharing">HIMNO A SAN JUDAS TADEO</a>
+                                <a href="https://drive.google.com/file/d/1vbtlNBlNJugacqTLeEfZcAmUd2xZeK1U/view?usp=sharing">HIMNO A SANTIAGO APOSTOL</a>
+                                <a href="https://drive.google.com/file/d/1icremVjCZ1IXKIRiwfrRoakycODoz7N_/view?usp=sharing">HOSSANA EH</a>
+                                <a href="https://drive.google.com/file/d/185E4qrMEwHtcQvsGfiotrHe_7NWspmI9/view?usp=sharing">HOY SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1TirzJPM33xzPvBEJcSVkh54w2-IGep8F/view?usp=sharing">JESUCRISTO ME DEJO</a>
+                                <a href="https://drive.google.com/file/d/1-6jogsme9X6hxOuxZaUSuOdWlR7yxPX8/view?usp=sharing">JUNTO A TI MARIA</a>
+                                <a href="https://drive.google.com/file/d/1ZUj3XYL15oSxiRvkM4YfM3wNFKFYFcIe/view?usp=sharing">LA FAMILIA</a>
+                                <a href="https://drive.google.com/file/d/1V7wVbjuLOvhlT_C1SgzBliMYlqJhl8H5/view?usp=sharing">LA GUADALUPANA</a>
+                                <a href="https://drive.google.com/file/d/1DIHF4C5tIZjSkB0Q-5tn5WhkpPme64b3/view?usp=sharing">LA INMACULADA</a>
+                                <a href="https://drive.google.com/file/d/1oy7wsy8W3MmlKO3hy32Acev2vBVFj_Be/view?usp=sharing">LAS CUADRO APARICIONES</a>
+                                <a href="https://drive.google.com/file/d/1-8kC1wTJBzR-wR_X3tYsY1vJnYJCzMhY/view?usp=sharing">LAS MAÑANITAS</a>
+                                <a href="https://drive.google.com/file/d/1kqIvWfC0rEuHik3kx8E8GEOp7QNtRL0V/view?usp=sharing">LIMPIAME SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1hpveS8YWWiMIQWLYtP3KNbNS1ewu-ZU5/view?usp=sharing">MADRE DEL SILENCIO</a>
+                                <a href="https://drive.google.com/file/d/1rXSGhgdcy_rE0gCV4HVvGv8Rc8laISej/view?usp=sharing">MADRE ERES BELLA</a>
+                                <a href="https://drive.google.com/file/d/1_sZEp-GiXAgcC1xCYMdPmGDyYdDI9UXj/view?usp=sharing">MADRE OYEME</a>
+                                <a href="https://drive.google.com/file/d/1KAaBUYhxrbvtuXFq4Dmd8xZfeAkC5lX0/view?usp=sharing">MARIA DE NAZARET</a>
+                                <a href="https://drive.google.com/file/d/1OjhWWo_X65dCKgTL6kND70YExoryzoEa/view?usp=sharing">MI VIRGEN RANCHERA</a>
+                                <a href="https://drive.google.com/file/d/1tEhJtzVgVzPc9vrE3oGxdrD3hLbcRYWK/view?usp=sharing">MISIONERO</a>
+                                <a href="https://drive.google.com/file/d/1H7dfxwI_cvSb2W6d1JIqs4lylQNg6UTZ/view?usp=sharing">NIÑA</a>
+                                <a href="https://drive.google.com/file/d/11AaG5eE9tCYwwvdPTHuLZ7xCCCoZPgAX/view?usp=sharing">NIÑITO HERMANITO</a>
+                                <a href="https://drive.google.com/file/d/1cct6yVHI7vHBHMRco2VZvzZ2EFhA4_4C/view?usp=sharing">OH MARIA</a>
+                                <a href="https://drive.google.com/file/d/1mBC30IORqXBaaSd1nKt8mKIW2_BzHm-_/view?usp=sharing">PRONUNCIO MI NOMBRE</a>
+                                <a href="https://drive.google.com/file/d/1k9EjV4tOuGGH78UurA0uwRSXk4NyjMfT/view?usp=sharing">QUIEN PIERDE SU VIDA</a>
+                                <a href="https://drive.google.com/file/d/1lUxdRyBGMh7msa9W8W0KtecydG1Nw6fF/view?usp=sharing">QUIEN SERA LA MUJER</a>
+                                <a href="https://drive.google.com/file/d/1G4RIY2QYaJxls55isAthNiV1v89nJW5J/view?usp=sharing">SANTA MARIA DEL CAMINO</a>
+                                <a href="https://drive.google.com/file/d/1wa3ciwT_PUQrD8tYRp5D2HU9ynmt5fTU/view?usp=sharing">TAN BELLO AMOR</a>
+                                <a href="https://drive.google.com/file/d/1v5o4lKQpeWW51h0deu1megfMrArSvhPC/view?usp=sharing">TE CONSAGRO</a>
+                                <a href="https://drive.google.com/file/d/1QszK-vfQN2ALPTe-Cb15eiRZWCrqdHnV/view?usp=sharing">TE DOY GRACIAS</a>
+                                <a href="https://drive.google.com/file/d/1t9lTf_3-EQCxtED_Q4Y3lfdCBBzs5WL_/view?usp=sharing">TESTIGOS</a>
+                                <a href="https://drive.google.com/file/d/1VnqOLH2W0vEKsmexCobAohEAp6DCutWB/view?usp=sharing">TIENES QUE SER UN NIÑO</a>
+                                <a href="https://drive.google.com/file/d/17iuBxU1etUJXJ-yILM2HKQ417SfKSEBz/view?usp=sharing">UN ANHELO FERVIENTE</a>
+                                <a href="https://drive.google.com/file/d/10f6rycmbvPevcnqQQGMFVI7_l2RoRj_4/view?usp=sharing">UN CIERTO GALILEO</a>
+                                <a href="https://drive.google.com/file/d/12PMPUM9gWVsOM8nI4jpnadRQNRybC-Iv/view?usp=sharing">UN DIA CAMINABA</a>
+                                <a href="https://drive.google.com/file/d/1ZhTJARQ2wV3EddEht1LuqWkHZFwzPz23/view?usp=sharing">VEN AMADA MIA</a>
+                                <a href="https://drive.google.com/file/d/1_mGJ8XwH3r3D_bxD7YeQQzn8jKF4ON8p/view?usp=sharing">VEN ESPIRITU DIVINO</a>
+                                <a href="https://drive.google.com/file/d/1lNvbAliGfqU9y6DQkIkP1Wvfdc-lQDsy/view?usp=sharing">VIVA CRISTO REY</a>
+                                <a href="https://drive.google.com/file/d/1Kod9nG4sa2XzDwc1_MKYZzkk3HIBAMsY/view?usp=sharing">VIVE JESUS EL SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1WU8ojmZIxH1iuDuWrduCHbEjjNc4be3K/view?usp=sharing">YO NO ERA PROFETA</a>
+                                <a href="https://drive.google.com/file/d/1HZ7Sut0r3AnjAivqCuBdguqlKTa0T6c9/view?usp=sharing">YO NO SOY NADA</a>
+                                <a href="https://drive.google.com/file/d/1nssa8LNzbw7hLl5i9M7MvmYpObiyok9v/view?usp=sharing">YO TENGO UNA MADRE</a>
+                                <!-- CANTOS AL NIÑO DE PRAGA-->
+                                <a href="https://drive.google.com/file/d/128syJLZNVUaqUTDDp00EhjOYRb68oBF2/view?usp=sharing">GLORIOSO DIA</a>
+                                <a href="https://drive.google.com/file/d/1IhuSyy43ZRiwuGCavvU_Y_dQ_u3BSWYf/view?usp=sharing">LAS MAÑANITAS</a>
+                                <a href="https://drive.google.com/file/d/1KcdKgSO5WxHR6PRlihrQuyXDMjv7zyZj/view?usp=sharing">NIÑITO DE PRAGA</a>
+                                <a href="https://drive.google.com/file/d/1AuBhsH2dqmFr3tPfR4X2WjeDDfr4I85i/view?usp=sharing">NIÑITO</a>
+                                <a href="https://drive.google.com/file/d/10D4GsIrJpQSuc92Aa6Zyu_lj2u5e40fC/view?usp=sharing">VENIMOS HOY A CELEBRAR</a>
+                                <!-- CANTOS AL SAGRADO CORAZON -->
+                                <a href="https://drive.google.com/file/d/1JNfqqgXkcsXqi__dAhhiZA0pE28zLrjD/view?usp=sharing">CORAZON DE JESUS EN VOS CONFIO</a>
+                                <!-- CANTOS DE ADORACION -->
+                                <a href="https://drive.google.com/file/d/1jF6Lt_hYvIETcb6TaFaSe0bsbFd5ROBL/view?usp=sharing">ABRAZA LA CRUZ</a>
+                                <a href="https://drive.google.com/file/d/1UBS0vRpoBGNGFn6yfRUS-UcXb_nvMkLx/view?usp=sharing">AL ESTAR EN AL PRESENCIA</a>
+                                <a href="https://drive.google.com/file/d/11hRKLlsab9sw8RPSM3xIg_q175dBpP5U/view?usp=sharing">ALABARE</a>
+                                <a href="https://drive.google.com/file/d/10VLeH_sCzGC0fRTJ2kPisk2bAMGdJucr/view?usp=sharing">ALTISIMO SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1zIKPM52FjXDiBeVZIGp7gCCuuiIcv-cZ/view?usp=sharing">ANGELES DE DIOS</a>
+                                <a href="https://drive.google.com/file/d/1AMyTIgZCEakpwAV3i7NxUj6Lq3tOwFXV/view?usp=sharing">BENDITO BENDITO</a>
+                                <a href="https://drive.google.com/file/d/1hcpRlRemlkc-1X-sFcWHsfBDdlTrqmC3/view?usp=sharing">DEJAME NACER</a>
+                                <a href="https://drive.google.com/file/d/1YGZQbIdp0B2vJo_QygdTUGWRI5TqaDaQ/view?usp=sharing">DIGNO DE ALABAR</a>
+                                <a href="https://drive.google.com/file/d/1fwMxv5XH4NI185ts2x8h9pMdbRB4N3YI/view?usp=sharing">DIME JESUS</a>
+                                <a href="https://drive.google.com/file/d/1n54zkI-daS_g-GE5eqfUKOXmrtUdmuSE/view?usp=sharing">DIOS ESTA AQUI</a>
+                                <a href="https://drive.google.com/file/d/1ILVMpBr2ITyHFpi2vz-hGTxi_bdCCDBF/view?usp=sharing">DIOS ME AMA A MI</a>
+                                <a href="https://drive.google.com/file/d/1MIt-prL0mPCSNAoVOk6FPuzZPBD_KDP6/view?usp=sharing">DIOS MIO</a>
+                                <a href="https://drive.google.com/file/d/14I78397KVGZDGREY7DLHTpYoe-EWBaoi/view?usp=sharing">EL ALFARERO</a>
+                                <a href="https://drive.google.com/file/d/1e1Ny0k3L2BxDDot-_ZDkP1XcAY5Iv6UF/view?usp=sharing">EL AMOR DE DIOS</a>
+                                <a href="https://drive.google.com/file/d/1qF1Vo9XOCi-Fh5k6BJEOGh-tPz-FZh0S/view?usp=sharing">EL AMOR DE MI DIOS</a>
+                                <a href="https://drive.google.com/file/d/1lTgmsONJIJXpC8nu-H1RelHf4EMDXVU4/view?usp=sharing">EN LOS CIELOS</a>
+                                <a href="https://drive.google.com/file/d/10_fzvFlDBouliTyv1Btp7mAn1T5XntVt/view?usp=sharing">ENAMORADO DE UN MADERO</a>
+                                <a href="https://drive.google.com/file/d/15V57PcyQw596yH4gIrTPUr0ZXgl2faei/view?usp=sharing">ENCUENTRO</a>
+                                <a href="https://drive.google.com/file/d/1XIAl7mB5eGfUL1YdnYzUoDf37mb2tKmW/view?usp=sharing">ESPIRITU DE DIOS</a>
+                                <a href="https://drive.google.com/file/d/1M9PXEBzFYEhQWelUudn5xHL-e3A3dePm/view?usp=sharing">GRACIAS QUIERO DARTE</a>
+                                <a href="https://drive.google.com/file/d/1yVFJRNkbn1bmrPg8EKlgEqPJ2oQ1u_ek/view?usp=sharing">HAZ DE UN VASO</a>
+                                <a href="https://drive.google.com/file/d/1TNRHuSqqgC86KhWtqD6oBFHFb90St23B/view?usp=sharing">HAZ LLOVER</a>
+                                <a href="https://drive.google.com/file/d/1lCsRk0KBlFazQkKODH0svxrHinrxJuKQ/view?usp=sharing">HUESPED DEL ALMA</a>
+                                <a href="https://drive.google.com/file/d/1vHT98hXlT6NxjgCZT3BX-61PC7yFA8PR/view?usp=sharing">INCOMPARABLE</a>
+                                <a href="https://drive.google.com/file/d/1oibb0Eug3B9j1XdINPSuiMdBoZw064dC/view?usp=sharing">JESUS DE GALILEA</a>
+                                <a href="https://drive.google.com/file/d/14oWScD-CSHROb5PWp6HoMxWcBEUwvJuq/view?usp=sharing">LE LLAMAN JESUS</a>
+                                <a href="https://drive.google.com/file/d/1T-j-EbhAeiAaVylrYUBOVTWKjN9pErbM/view?usp=sharing">MI JESUS SACRAMENTADO</a>
+                                <a href="https://drive.google.com/file/d/1NRl3UaaO3DWi9ZldrYiQ-D1TN8glAvMd/view?usp=sharing">MIENTRAS TENGA YO</a>
+                                <a href="https://drive.google.com/file/d/1AfwJ1K1xvSeuONrAJWor6RNnoVJe02UF/view?usp=sharing">NADIE TE AMA COMO YO</a>
+                                <a href="https://drive.google.com/file/d/126DqVcdNlDip_SAUX_-a4HMLuNX0rVvr/view?usp=sharing">OH DEJA</a>
+                                <a href="https://drive.google.com/file/d/18gRPAoiCpChsSW17OyjEF3FFBcWtA3JJ/view?usp=sharing">POSTRADO ANTE LA CRUZ</a>
+                                <a href="https://drive.google.com/file/d/1eJPG43Pm266k1I04_Au_djNSLbwhTqbI/view?usp=sharing">PRESENCIA DIVINA</a>
+                                <a href="https://drive.google.com/file/d/13t05-puH692c7gJ84owjD2w6nZ-Rb_3U/view?usp=sharing">QUIERO CANTAR</a>
+                                <a href="https://drive.google.com/file/d/1QqOi5bu_aGqo-tmLHd2-73jHh7WsXU2d/view?usp=sharing">SALVE CRUZ BENDITA</a>
+                                <a href="https://drive.google.com/file/d/1eEsQBkuzreUXFQEIAPtIJKqgr2PeM2rB/view?usp=sharing">SIEMPRE TE AMARE</a>
+                                <a href="https://drive.google.com/file/d/1wsKr-UXBiAhpFubqwI6_vrlc0f06DN7Z/view?usp=sharing">SUMERGEME</a>
+                                <a href="https://drive.google.com/file/d/1o3IlWb_mMq1tBdXdVZM7jPWH3-hmeZ2T/view?usp=sharing">TU SEÑOR</a>
+                                <a href="https://drive.google.com/file/d/1FpAxzp6uOjvpIoX8qL2c7T5c-PfX67IR/view?usp=sharing">TU Y YO</a>
+                                <a href="https://drive.google.com/file/d/1xpOjXPLe0Vk0oq-6Ma3BQO-tCXjCXVE5/view?usp=sharing">UN DIA CAMINABA</a>
+                                <a href="https://drive.google.com/file/d/1raNeNv5CHBcWhyjIwPzusgRqSGJOs7Ej/view?usp=sharing">VED LA CRUZ DE SALVACION</a>
+                                <a href="https://drive.google.com/file/d/1FMPin6nxkYT8tlCQA59DKYPIs3gRd0VX/view?usp=sharing">VENID A MI</a>
+                                <!-- CANTOS DE DIFUNTO -->
+                                <a href="https://drive.google.com/file/d/1pBW8itLd2exdApNR8rkPhzpW4m4w2c_O/view?usp=sharing">AL PARAISO</a>
+                                <a href="https://drive.google.com/file/d/1jhysUwXtVOblm6slE7qjBMjUGIoKIBIq/view?usp=sharing">CRISTO ESTA CONMIGO</a>
+                                <a href="https://drive.google.com/file/d/1R8p8Ky-_SE9plFtREn06JmXEYsad8Y94/view?usp=sharing">DALE EL DESCANSO</a>
+                                <a href="https://drive.google.com/file/d/1wpPX5rNtR8tZDaLZcEoECJLqN-4MbVaq/view?usp=sharing">HAY MOMENTOS</a>
+                                <a href="https://drive.google.com/file/d/1T4fej4GLPmVEXQjWjSkOwuDfb_PNKXzL/view?usp=sharing">HAZME FUERTE</a>
+                                <!-- CANTO DE NAVIDAD -->
+                                <a href="https://drive.google.com/file/d/1bFXSUMEcWTi1EAG6zmN-ZJnaM8rAet5O/view?usp=sharing">A LA NANITA NANA</a>
+                                <a href="https://drive.google.com/file/d/1T8KJXyc_t6o-9etjQ9QJnEP_VjXQYDYK/view?usp=sharing">ADESTE FIDELES</a>
+                                <a href="https://drive.google.com/file/d/18HdGaxOiFLr1tMd4C4QlPxYZqGUqm3VF/view?usp=sharing">ARRE BORRIQUITO</a>
+                                <a href="https://drive.google.com/file/d/15rJlvk3LatJLhEgNA5aItdo-DRwwdbgD/view?usp=sharing">AY DEL CHIRRIQUITIN</a>
+                                <a href="https://drive.google.com/file/d/1NQmNpsm-MkpUlADQrabgTciD0Ap1j2gq/view?usp=sharing">CAMINANDO DESDE ORIENTE</a>
+                                <a href="https://drive.google.com/file/d/18FoOO6nKSRysOthd-4lSDtX3rXDEjtvB/view?usp=sharing">CAMPANA NAVIDEÑA</a>
+                                <a href="https://drive.google.com/file/d/13jPLAPsrs8iPHLi0BaW9V3hQP5PLobpE/view?usp=sharing">CAMPANA SOBRE CAMPANA</a>
+                                <a href="https://drive.google.com/file/d/13q0rrOns8g4yiYbuQjrEJgWxq0Of1qnY/view?usp=sharing">DIME NIÑO</a>
+                                <a href="https://drive.google.com/file/d/1Qmdg5djByK-C6TdijgD64pyLfjYIoEUY/view?usp=sharing">EL NIÑO DEL TAMBOR</a>
+                                <a href="https://drive.google.com/file/d/1pUYxTfebk_dylMVm74gjrmHZrqF0QVZX/view?usp=sharing">HACIA BELEN VA UNA BURRA</a>
+                                <a href="https://drive.google.com/file/d/1yIV8vg9kdU8nzs3WLvya2buRsE5Gtf4Q/view?usp=sharing">HOY ES NAVIDAD</a>
+                                <a href="https://drive.google.com/file/d/1riHmo77BzdSTBV87Pjh2DmaNmXlp14p3/view?usp=sharing">LA FAMILIA SAGRADA</a>
+                                <a href="https://drive.google.com/file/d/1Nh0Fu79omHOzXEyippg53ipBs5DHpUU2/view?usp=sharing">LA MARIMORENA</a>
+                                <a href="https://drive.google.com/file/d/18qx7eGRTGVmFil7cakhmkjdYm-9XsOnd/view?usp=sharing">LA MULA</a>
+                                <a href="https://drive.google.com/file/d/1G0kLkAlRbZwpwDvJum4MvsXLVQ_jnJyd/view?usp=sharing">LOS ANGELES DEL CIELO</a>
+                                <a href="https://drive.google.com/file/d/1EjqbQHjJjr5KIPninoLirRt34ZJUSh8x/view?usp=sharing">LOS PASTORES</a>
+                                <a href="https://drive.google.com/file/d/1xd4wrbawaJDppVpMBNgJot_ktVregHx8/view?usp=sharing">LOS PECES EN EL RIO</a>
+                                <a href="https://drive.google.com/file/d/1pldjU2NQu7DgU5OgWGDI7Nfy9rXLAdjq/view?usp=sharing">MADRE EN LA PUERTA</a>
+                                <a href="https://drive.google.com/file/d/1sSQq2a_bVEPFXTh6-EWxcuq-_Sdc_Yww/view?usp=sharing">MI BURRITO SABANERO</a>
+                                <a href="https://drive.google.com/file/d/1hcGJqPEdbOeODocBxqe-QrstDmZvajmP/view?usp=sharing">NOCHE DE PAZ</a>
+                                <a href="https://drive.google.com/file/d/1xE_yssebqZi1lT_lAk6YSKm-oWnWXadQ/view?usp=sharing">PASTORES VENID</a>
+                                <a href="https://drive.google.com/file/d/1Nr2BKCCj3W_89f4T13EEj15cECRJMbT2/view?usp=sharing">TUTAINA</a>
+                                <a href="https://drive.google.com/file/d/1XhNjqrWkff4ZRdGJrQx_GJxX0sWfjQg4/view?usp=sharing">VEN A CANTAR</a>
+                                <a href="https://drive.google.com/file/d/1fo2ydG2nOJIkyzqO0SE5cZq5ala063yW/view?usp=sharing">VEN A CANTARLE A JESUS</a>
+                                <!-- CANTOS DE DOMINGO DE RAMOS -->
+                                <a href="https://drive.google.com/file/d/1PaOB4on5G8uIjMdHTYYnIoBCqFXtd3DX/view?usp=sharing">ARRIBA NUESTROS RAMOS</a>
+                                <a href="https://drive.google.com/file/d/1XFfb4yAmI2ATTJb3SUeOJ7s-K8gR7QP9/view?usp=sharing">LOS NIÑOS HEBREOS</a>
+                                <!-- POPURRIS -->
+                                <a href="https://drive.google.com/file/d/1htDQVXyzL20QcbAo4uRg41gWko5dfxcQ/view?usp=sharing">ALGO VA DECENDIENDO</a>
+                                <a href="https://drive.google.com/file/d/1EGx4gLod-DrrtG2HzWfpSri1NdQn36WZ/view?usp=sharing">ALZAR LAS MANOS</a>
+                                <a href="https://drive.google.com/file/d/1954R6l709ohWBbIaxibOyBN2B2FPRSpd/view?usp=sharing">BAJA AL RIO</a>
+                                <a href="https://drive.google.com/file/d/1QjQxxgPV2q-aat7n7RHjmDqYXuovMdIg/view?usp=sharing">CENTINELA</a>
+                                <a href="https://drive.google.com/file/d/1bHzPWjOB9o22eexSr7wRAXf6m58uAfSW/view?usp=sharing">DIOS ES AMOR</a>
+                                <a href="https://drive.google.com/file/d/1vGege_05Mj9RIuNT8OW69I7cJD_Tj7ah/view?usp=sharing">ESTAMOS DE FIESTA</a>
+                                <a href="https://drive.google.com/file/d/1_grL2XwJKhkJp2UXqjYJdOzzivKSoxKm/view?usp=sharing">ESTE GOZO</a>
+                                <a href="https://drive.google.com/file/d/1BB2J4ctNxBPYlVWRn4g4G9P5xvKxdw0U/view?usp=sharing">HAY PODER</a>
+                                <a href="https://drive.google.com/file/d/1UohCsqOCHdkudJCUDsya_GFHugetd_0N/view?usp=sharing">HAY UN RIO DE VIDA</a>
+                                <a href="https://drive.google.com/file/d/1TYit0_0z5znOIqO1jrmRL2a5XjDBh2HD/view?usp=sharing">MANDA EL FUEGO</a>
+                                <a href="https://drive.google.com/file/d/1dV6vIOYaDSZPJEjeRCys2VfcThOeMcV2/view?usp=sharing">MEDLEY</a>
+                                <a href="https://drive.google.com/file/d/1Z9BMebIOdOaTYCctTSneIAn4-GCK-N1e/view?usp=sharing">MI DIOS ESTA VIVO</a>
+                                <a href="https://drive.google.com/file/d/1tTWB9ZHmg2ELnukQqNnbj_LiBWbmo8eR/view?usp=sharing">NO HAY DIOS TAN GRANDE</a>
+                                <a href="https://drive.google.com/file/d/1zpToOy8Xm-v4NtbXF77_J7tHwCamvbLF/view?usp=sharing">QUIEN ES ESE</a>
+                                <a href="https://drive.google.com/file/d/1Bfkh2n8FbIBDSG6SUlR6Wluqi7oViEtU/view?usp=sharing">SI TUVIERAS FE</a>
+                                <a href="https://drive.google.com/file/d/1fefWnondeTP0ZhkKWJA9ZZ8E5_ubFjZV/view?usp=sharing">VAMOS A BEDECIR</a>
+                                <a href="https://drive.google.com/file/d/1EgOnea1eZMVXJv8HJHlaA5FPrhLtbzcu/view?usp=sharing">VIVA LA FE</a>
+                                <a href="https://drive.google.com/file/d/1f9kIaOgJAsuG7HqCyIhtgjWLO0x6jrHZ/view?usp=sharing">YO TENGO UN AMIGO</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </center>
+            </article>
+        </div>
+        <!------------------------------------------------------------->
+    </div>
+
+    <div class="container-footer">	
+        <footer>
+            <div class="logo-footer">
+                <img src="../img/logo.jpg" class="logoP" alt="">
+            </div>
+
+            <div class="redes-footer">
+                <a href="https://www.facebook.com/profile.php?id=100073750513143&sk=about"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2022 CoroMusicaDeDios - Creador-Josue Chavez</h4>
+
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+            function toggleDropdown() {
+            var dropdownOptions = document.getElementById('dropdown-options');
+            var searchInput = document.getElementById('search-input');
+    
+            if (searchInput.value.trim() !== '') {
+                dropdownOptions.style.display = dropdownOptions.style.display === 'none' ? 'block' : 'none';
+            } else {
+                dropdownOptions.style.display = 'none';
+            }
+        }
+    
+        function filterCategories() {
+            var input = document.getElementById('search-input');
+            var filter = input.value.trim().toUpperCase();
+            var options = document.getElementById('dropdown-options').getElementsByTagName('a');
+            var resultsContainer = document.getElementById('results-container');
+    
+            // Mostrar u ocultar el contenedor de resultados solo si hay algo escrito
+            resultsContainer.style.display = filter !== '' ? 'block' : 'none';
+    
+            // Mostrar u ocultar opciones de búsqueda según las coincidencias
+            for (var i = 0; i < options.length; i++) {
+                var textValue = options[i].textContent || options[i].innerText;
+                options[i].style.display = filter !== '' && textValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
