@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styleS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>CORO MUSICA DE DIOS</title>
+</head>
+<body>
+    <section class="side">
+        <img src="logo.jpg">
+    </section>
+
+    <section class="main">
+        <div class="login-container">
+            <p class="title">CARPETA DIGITAL</p>
+            <div class="separator"></div>
+            <p class="welcome-message">Solo el administrador principal puede acceder a este apartado</p>
+
+            <form class="login-form" method="post" id="from_id">
+                <div class="form-control">
+                    <input type="text" placeholder="Usuario" name="usuar" id="usuar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-control">
+                    <input placeholder="password" type="Password" name="password" id="password">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <input class="submit" type="button" value="INGRESAR" id="submit" onclick="validate()">
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+            function validate() {
+            var usuar = document.getElementById("usuar").value;
+            var password = document.getElementById("password").value;
+
+            if (usuar === "admin" && password === "1234") {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'USUARIO CORRECTO',
+                    text: 'ADMINISTRADOR'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        showSaveConfirmation();
+                    }
+                });
+                window.location="https://drive.google.com/drive/folders/1nRfeSO9-rNIltzm3IlifO2Zs5fkMyzOv?usp=sharing";
+                return true;
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algo salió mal',
+                    text: 'Intenta de nuevo'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
